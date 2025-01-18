@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aryan's Portfolio</title>
+
+    <!--
+    - favicon
+  -->
+    <link
+      rel="shortcut icon"
+      href="./assets/images/logo.ico"
+      type="image/x-icon"
+    />
+
+    <!--
+    - custom css link
+  -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!--
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!--
+    - #MAIN
+  -->
+
+    <main>
+      <!--
+      - #SIDEBAR
+    -->
+
+      <aside class="sidebar" data-sidebar>
+        <div class="sidebar-info">
+          <figure class="avatar-box">
+            <img
+              src="./assets/images/4A6A0114 1.JPG"
+              alt="Richard hanrick"
+              width="80"
+            />
+          </figure>
+
+          <div class="info-content">
+            <h1 class="name" title="Richard hanrick">Aryan Deshmukh</h1>
+
+            <p class="title">Software Developer</p>
+          </div>
+
+          <button class="info_more-btn" data-sidebar-btn>
+            <span>Show Contacts</span>
+
+            <ion-icon name="chevron-down"></ion-icon>
+          </button>
+        </div>
+
+        <div class="sidebar-info_more">
+          <div class="separator"></div>
+
+          <ul class="contacts-list">
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Email</p>
+
+                <a href="mailto:aryan0deshmukh@gmail.com" class="contact-link"
+                  >aryan0deshmukh@gmail.com</a
+                >
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="phone-portrait-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Phone</p>
+
+                <a href="tel:+917522932355" class="contact-link"
+                  >+91 7522932355</a
+                >
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Location</p>
+
+                <address>Maharashtra, India</address>
+              </div>
+            </li>
+          </ul>
+
+          <div class="separator"></div>
+
+          <ul class="social-list">
+            <li class="social-item">
+              <a
+                href="https://www.instagram.com/_a._.ryan_?igsh=dnJ5dWcxeGI1c2tv"
+                class="social-link"
+              >
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <!--
+      - #main-content
+    -->
+
+      <div class="main-content">
+        <!--
+        - #NAVBAR
+      -->
+
+        <nav class="navbar">
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <button class="navbar-link active" data-nav-link>About</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Resume</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Portfolio</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Blog</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Contact</button>
+            </li>
+          </ul>
+        </nav>
+
+        <!--
+        - #ABOUT
+      -->
+
+        <article class="about active" data-page="about">
+          <header>
+            <h2 class="h2 article-title">About me</h2>
+          </header>
+
+          <section class="about-text">
+            <p>
+              Currently, I am pursuing my B.Tech in Computer Engineering at K.K.
+              Wagh College of Engineering Education & Research. I completed my
+              S.S.C. and H.S.C. in my hometown, Bhandara, a charming town near
+              Nagpur in Maharashtra. I belong to a close-knit nuclear family
+              with my mom, dad, and elder brother. Beyond academics, I enjoy
+              playing basketball and staying updated on various sports
+              events—it’s my way of keeping both mind and body in the game!
+            </p>
+
+            <p>
+              I'm always ready to learn and dive into new tech like it's the
+              latest episode of a binge-worthy series. Enthusiasm for upcoming
+              innovations? Let's just say, I stay ahead of the curve while
+              having fun on the ride.
+            </p>
+          </section>
+
+          <!--
+          - service
+        -->
+
+          <section class="service">
+            <h3 class="h3 service-title">What I'm doing</h3>
+
+            <ul class="service-list">
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/icon-design.svg
+                "
+                    alt="design icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Web design</h4>
+
+                  <p class="service-item-text">
+                    While still developing my skills, I have worked on several
+                    projects and strive to create modern, high-quality designs
+                    at a professional level.
+                  </p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/icon-dev.svg"
+                    alt="Web development icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Web development</h4>
+
+                  <p class="service-item-text">
+                    I've already developed projects and aim to produce
+                    high-quality websites that meet professional standards.
+                  </p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/icon-app.svg"
+                    alt="mobile app icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">App Development</h4>
+
+                  <p class="service-item-text">
+                    As a beginner in mobile app development, I am excited to
+                    learn and grow in this field. I have already worked on a few
+                    projects, focusing on developing applications for both iOS
+                    and Android at a professional level.
+                  </p>
+                </div>
+              </li>
+
+              <li class="service-item">
+                <div class="service-icon-box">
+                  <img
+                    src="./assets/images/icon-photo.svg"
+                    alt="camera icon"
+                    width="40"
+                  />
+                </div>
+
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Machine Learning</h4>
+
+                  <p class="service-item-text">
+                    As a beginner in Machine Learning, I'm deeply enthusiastic
+                    about exploring and learning the intricacies of this field.
+                    I have started developing projects and am eager to expand my
+                    knowledge and skills in AIML.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <!--
+          - testimonials
+        -->
+
+          <section class="testimonials">
+            <h3 class="h3 testimonials-title">Testimonials</h3>
+
+            <ul class="testimonials-list has-scrollbar">
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item>
+                  <figure class="testimonials-avatar-box">
+                    <img
+                      src="./assets/images/avatar-1.png"
+                      alt="Daniel lewis"
+                      width="60"
+                      data-testimonials-avatar
+                    />
+                  </figure>
+
+                  <h4
+                    class="h4 testimonials-item-title"
+                    data-testimonials-title
+                  >
+                    Neel Shah (InveeSync CEO)
+                  </h4>
+
+                  <div class="testimonials-text" data-testimonials-text>
+                    <p>
+                      During his Internship time at InveeSync, Aryan
+                      demonstrated a strong willingness to learn and adapt,
+                      constantly improving his skills. His positive attitude and
+                      dedication have been commendable.
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <!--
+          - testimonials modal
+        -->
+
+          <div class="modal-container" data-modal-container>
+            <div class="overlay" data-overlay></div>
+
+            <section class="testimonials-modal">
+              <button class="modal-close-btn" data-modal-close-btn>
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+
+              <div class="modal-img-wrapper">
+                <figure class="modal-avatar-box">
+                  <img
+                    src="./assets/images/avatar-1.png"
+                    alt="Daniel lewis"
+                    width="80"
+                    data-modal-img
+                  />
+                </figure>
+
+                <img src="./assets/images/icon-quote.svg" alt="quote icon" />
+              </div>
+
+              <div class="modal-content">
+                <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
+
+                <time datetime="2021-06-14">14 June, 2021</time>
+
+                <div data-modal-text>
+                  <p>
+                    Richard was hired to create a corporate identity. We were
+                    very pleased with the work done. She has a lot of experience
+                    and is very concerned about the needs of client. Lorem ipsum
+                    dolor sit amet, ullamcous cididt consectetur adipiscing
+                    elit, seds do et eiusmod tempor incididunt ut laborels
+                    dolore magnarels alia.
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <!--
+          - clients
+        --></article>
+
+        <!--
+        - #RESUME
+      -->
+
+        <article class="resume" data-page="resume">
+          <header>
+            <h2 class="h2 article-title">Resume</h2>
+          </header>
+
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+
+              <h3 class="h3">Education</h3>
+            </div>
+
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  K K Wagh Institute of Engineering Education & Research,
+                  Maharashtra
+                </h4>
+
+                <span>2022 - 2026</span>
+
+                <p class="timeline-text">
+                  <strong>CSI Vice President:</strong> I was honored to lead and
+                  represent the chapter after being
+                  <em>selected among numerous talented students</em> who had
+                  applied. In this role, I organized technical and non-technical
+                  events like hackathons, workshops, and guest lectures to
+                  enhance my peers' skills and knowledge.
+                  <a
+                    href="https://drive.google.com/file/d/1V4Q9BmeXcx95k-SqFnSadXY0ANFfoM9g/view?usp=drive_link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="certificate-link"
+                    >View Certificate</a
+                  >
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  Vikas High School, Maharashtra
+                </h4>
+
+                <span>2020 - 2022</span>
+
+                <p class="timeline-text">
+                  <strong>High School Topper:</strong> Achieved the highest rank
+                  among all students in my high school, earning recognition in a
+                  leading newspaper publication for my achievement.
+                  <a
+                    href="https://drive.google.com/file/d/1xSnYA3-uYBOfVy7miT0USo3bxLOpESLp/view?usp=drive_link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="certificate-link"
+                    >View Certificate</a
+                  >
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  Royal Public School, Maharashtra
+                </h4>
+
+                <span>2010 - 2020</span>
+
+                <p class="timeline-text">
+                  <strong>Blue House Vice Captain:</strong> Led the house in
+                  organizing school events, fostering teamwork, and enhancing
+                  event management skills.
+                  <a
+                    href="https://drive.google.com/file/d/11-S8LNr93CnREMdimKtOavkC5mvdHjwh/view?usp=drive_link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="certificate-link"
+                    >View Certificate</a
+                  >
+                  <br />
+                  <strong>Basketball Team Captain:</strong> Led the school team
+                  to become <em>runners-up</em> in the district-level
+                  competition organized by the Maharashtra Government and
+                  <em>champions</em> in the inter-school tournament at Bhandara.
+                  <a
+                    href="https://drive.google.com/file/d/1DsQf8EvcDQYzWLbfXCaH__q5kxYGZwe9/view?usp=drive_link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="certificate-link"
+                    >View Certificate</a
+                  >
+                </p>
+              </li>
+            </ol>
+          </section>
+
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+
+              <h3 class="h3">Experience</h3>
+            </div>
+
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  Internship: Frontend Developer at InveeSync
+                </h4>
+
+                <span>Dec 2024 - Jan 2025</span>
+
+                <p class="timeline-text">
+                  • The company faced inefficiencies in presenting
+                  factory-specific data, so I was asked to create a
+                  user-friendly interface to fetch and display structured data
+                  from an API.
+                  <br />
+                  • Developed advanced filtering, sorting, and search
+                  functionalities, utilizing React for a seamless UI & API
+                  optimization for quick data retrieval.
+                  <br />
+                  • Improved data processing speed, enhancing decision-making
+                  efficiency across teams.
+                </p>
+              </li>
+            </ol>
+          </section>
+
+          <section class="skill">
+            <h3 class="h3 skills-title">My skills</h3>
+
+            <ul class="skills-list content-card">
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">
+                    Languages |
+                    <em> C, C++, Java, Python, JavaScript, TypeScript </em>
+                  </h5>
+                  <data value="70">70%</data>
+                </div>
+
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 70%"></div>
+                </div>
+              </li>
+
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">Frameworks | <em> React, Express </em></h5>
+                  <data value="60">60%</data>
+                </div>
+
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 60%"></div>
+                </div>
+              </li>
+
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">
+                    Database | <em> MySQL, PostgreSQL, MongoDB </em>
+                  </h5>
+                  <data value="70">70%</data>
+                </div>
+
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 70%"></div>
+                </div>
+              </li>
+
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">Tools | <em> Bash, Git, GitHub </em></h5>
+                  <data value="80">80%</data>
+                </div>
+
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 80%"></div>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </article>
+
+        <!--
+        - #PORTFOLIO
+      -->
+
+        <article class="portfolio" data-page="portfolio">
+          <header>
+            <h2 class="h2 article-title">Portfolio</h2>
+          </header>
+
+          <section class="projects">
+            <ul class="filter-list">
+              <li class="filter-item">
+                <button class="active" data-filter-btn>All</button>
+              </li>
+
+              <li class="filter-item">
+                <button data-filter-btn>Web Development</button>
+              </li>
+
+              <!--
+              <li class="filter-item">
+                <button data-filter-btn>App Development</button>
+              </li>
+              -->
+
+              <li class="filter-item">
+                <button data-filter-btn>Machine Learning</button>
+              </li>
+
+              <li class="filter-item">
+                <button data-filter-btn>Others</button>
+              </li>
+            </ul>
+
+            <div class="filter-select-box">
+              <button class="filter-select" data-select>
+                <div class="select-value" data-selecct-value>
+                  Select category
+                </div>
+
+                <div class="select-icon">
+                  <ion-icon name="chevron-down"></ion-icon>
+                </div>
+              </button>
+
+              <ul class="select-list">
+                <li class="select-item">
+                  <button data-select-item>All</button>
+                </li>
+
+                <li class="select-item">
+                  <button data-select-item>Web Development</button>
+                </li>
+
+                <!--
+                <li class="select-item">
+                  <button data-select-item>App Development</button>
+                </li>
+                -->
+
+                <li class="select-item">
+                  <button data-select-item>Machine Learning</button>
+                </li>
+
+                <li class="select-item">
+                  <button data-select-item>Others</button>
+                </li>
+              </ul>
+            </div>
+
+            <ul class="project-list">
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="web development"
+              >
+                <a
+                  href="https://github.com/A-RYAN-1/Todo-App-Using-PERN-Stack-Development"
+                >
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <img
+                      src="./assets/images/project-1.jpg"
+                      alt="finance"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <h3 class="project-title">ToDo App</h3>
+
+                  <p class="project-category">PERN Stack Development</p>
+                </a>
+              </li>
+
+              <!--
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="app development"
+              >
+                <a href="#">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <img
+                      src="./assets/images/project-9.png"
+                      alt="arrival"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <h3 class="project-title">Eatsy</h3>
+
+                  <p class="project-category">Android Studio</p>
+                </a>
+              </li>
+              -->
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="machine learning"
+              >
+                <a
+                  href="https://github.com/A-RYAN-1/Lung-Cancer-Prediction-Using-Machine-Learning"
+                >
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <img
+                      src="./assets/images/project-2.png"
+                      alt="orizon"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <h3 class="project-title">Lung Cancer Prediction Model</h3>
+
+                  <p class="project-category">AIML</p>
+                </a>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="others"
+              >
+                <a
+                  href="https://github.com/A-RYAN-1/Visualizing-a-Drunken-Cockroach-Path-using-Computer-Graphics"
+                >
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <img
+                      src="./assets/images/project-3.jpg"
+                      alt="fundo"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <h3 class="project-title">Drunken Cockroach</h3>
+
+                  <p class="project-category">
+                    Data Structures & Computer Graphics
+                  </p>
+                </a>
+              </li>
+
+              <li
+                class="project-item active"
+                data-filter-item
+                data-category="others"
+              >
+                <a
+                  href="https://github.com/A-RYAN-1/Volume-Control-by-Hand-Gesture-using-Mediapipe"
+                >
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <img
+                      src="./assets/images/project-4.png"
+                      alt="brawlhalla"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <h3 class="project-title">Volume Controller</h3>
+
+                  <p class="project-category">OpenCV & Mediapipe</p>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </article>
+
+        <!--
+        - #BLOG
+      -->
+
+        <article class="blog" data-page="blog">
+          <header>
+            <h2 class="h2 article-title">Blog</h2>
+            <p class="humorous-line">
+              While I haven't had the opportunity to publish any research papers
+              yet, it's something I aspire to do in the near future. Until then,
+              I enjoy writing down my thoughts and reflections. In this journey,
+              I came up with a small quote that resonates with me deeply.
+            </p>
+          </header>
+
+          <section class="blog-posts">
+            <ul class="blog-posts-list">
+              <li class="blog-post-item">
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <p class="blog-category">Quote</p>
+                    <span class="dot"></span>
+                    <time datetime="2022-02-23">Feb 23, 2022</time>
+                  </div>
+                  <h3 class="h3 blog-item-title">
+                    "The day I understand the blurred line of difference between
+                    being content and being complacent is the day I feel
+                    salvation."
+                  </h3>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </article>
+
+        <!--
+        - #CONTACT
+      -->
+
+        <article class="contact" data-page="contact">
+          <header>
+            <h2 class="h2 article-title">Contact</h2>
+          </header>
+
+          <section class="mapbox" data-mapbox>
+            <figure>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29763.05081543975!2d79.63275227592445!3d21.177004552591775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a2b38aba7629c35%3A0xeb5bb18c18ae8f17!2sBhandara%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1737121037209!5m2!1sen!2sin"
+                width="600"
+                height="450"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                width="400"
+                height="300"
+                loading="lazy"
+              ></iframe>
+            </figure>
+          </section>
+
+          <section class="contact-form">
+            <h3 class="h3 form-title">Contact Me</h3>
+
+            <a
+              href="https://www.linkedin.com/in/aryan-deshmukh-793840259/"
+              target="_blank"
+              class="linkedin-link"
+            >
+              <ion-icon name="logo-linkedin" class="linkedin-icon"></ion-icon>
+              <span>Connect on LinkedIn</span>
+            </a>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <!--
+    - custom js link
+  -->
+    <script src="./assets/js/script.js"></script>
+
+    <!--
+    - ionicon link
+  -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
