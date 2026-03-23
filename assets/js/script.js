@@ -37,10 +37,10 @@ for (let i = 0; i < testimonialsItem.length; i++) {
     modalImg.src = this.querySelector("[data-testimonials-avatar]").src;
     modalImg.alt = this.querySelector("[data-testimonials-avatar]").alt;
     modalTitle.innerHTML = this.querySelector(
-      "[data-testimonials-title]"
+      "[data-testimonials-title]",
     ).innerHTML;
     modalText.innerHTML = this.querySelector(
-      "[data-testimonials-text]"
+      "[data-testimonials-text]",
     ).innerHTML;
 
     testimonialsModalFunc();
@@ -137,3 +137,69 @@ for (let i = 0; i < navigationLinks.length; i++) {
     }
   });
 }
+
+/**
+ * SKILL PROGRESS BAR ANIMATION
+ * Animate skill progress bars when they come into view
+ */
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -100px 0px",
+};
+
+const observer = new IntersectionObserver(function (entries) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const skillFills = entry.target.querySelectorAll(".skill-progress-fill");
+      skillFills.forEach((fill) => {
+        const width = fill.getAttribute("data-width");
+        fill.style.width = width + "%";
+      });
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+const skillsSection = document.querySelector(".skill");
+if (skillsSection) {
+  observer.observe(skillsSection);
+}
+
+/**
+ * BACK TO TOP BUTTON
+ * Show/hide button and scroll to top functionality
+ */
+const backToTopBtn = document.createElement("button");
+backToTopBtn.className = "back-to-top";
+backToTopBtn.innerHTML = "↑";
+backToTopBtn.title = "Back to top";
+document.body.appendChild(backToTopBtn);
+
+window.addEventListener("scroll", function () {
+  if (window.pageYOffset > 300) {
+    backToTopBtn.classList.add("show");
+  } else {
+    backToTopBtn.classList.remove("show");
+  }
+});
+
+backToTopBtn.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
+
+/**
+ * PROJECT CARD HOVER ENHANCEMENT
+ * Add subtle animations to project cards
+ */
+const projectItems = document.querySelectorAll(".project-item");
+projectItems.forEach((item) => {
+  item.addEventListener("mouseenter", function () {
+    this.style.transform = "scale(1.02)";
+  });
+  item.addEventListener("mouseleave", function () {
+    this.style.transform = "scale(1)";
+  });
+});

@@ -2458,6 +2458,195 @@ article {
   }
 }
 
+/* Skill Progress Bars - CSS Dynamic Width */
+.skill-progress-fill[data-width="75"] {
+  width: 75%;
+}
+
+.skill-progress-fill[data-width="70"] {
+  width: 70%;
+}
+
+.skill-progress-fill[data-width="80"] {
+  width: 80%;
+}
+
+.skill-progress-fill {
+  animation: fillProgress 1s ease-out forwards;
+}
+
+@keyframes fillProgress {
+  from {
+    width: 0%;
+  }
+}
+
+/* Iframe Styling */
+.map-frame {
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Experience Section Improvements */
+.timeline-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.timeline-date {
+  font-size: 0.875rem;
+  color: var(--yellow-1);
+  font-weight: 600;
+}
+
+.timeline-location {
+  font-size: 0.875rem;
+  color: var(--light-gray);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.achievement-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.achievement-list li {
+  padding-left: 24px;
+  position: relative;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--light-gray-70);
+}
+
+.achievement-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--yellow-1);
+  font-weight: bold;
+}
+
+.education-highlight {
+  margin: 12px 0;
+  padding: 10px 0;
+  border-left: 3px solid var(--yellow-1);
+  padding-left: 12px;
+  font-size: 0.95rem;
+  color: var(--light-gray);
+}
+
+.education-highlight strong {
+  color: var(--yellow-1);
+  font-weight: 600;
+}
+
+.timeline-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.timeline-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.achievement-with-cert {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.achievement-with-cert .achievement-list {
+  flex: 1;
+}
+
+.certificate-link {
+  align-self: flex-start;
+  margin-top: 0;
+  color: var(--yellow-1);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.certificate-link:hover {
+  color: var(--orange-yellow);
+  text-decoration: underline;
+}
+
+/* Project Card Hover Effects */
+.project-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.project-item a {
+  text-decoration: none;
+}
+
+.project-category {
+  background: linear-gradient(135deg, var(--yellow-1), var(--orange-yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Back to Top Button (for future use) */
+.back-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  background: var(--yellow-1);
+  color: var(--eerie-black-1);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  z-index: 999;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 198, 41, 0.3);
+}
+
+.back-to-top:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(255, 198, 41, 0.5);
+}
+
+.back-to-top.show {
+  display: flex;
+}
+
 /* Accessibility - Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
 
