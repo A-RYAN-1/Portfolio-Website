@@ -34,29 +34,56 @@ Portfolio-Website/
 
 ## 🚀 How to Deploy on GitHub Pages
 
-### Step 1: Push to GitHub
+### Option 1: Deploy Feature Branch (For Testing)
 
-```bash
-git add .
-git commit -m "Initial commit"
-git push origin feature/complete-refactoring
-```
+1. **Push your feature branch:**
+   ```bash
+   git push origin feature/complete-refactoring
+   ```
 
-### Step 2: Enable GitHub Pages
+2. **Enable GitHub Pages for feature branch:**
+   - Go to your repository on GitHub
+   - Click **Settings** → **Pages**
+   - Under **Source**, select **GitHub Actions**
+   - The workflow will automatically deploy your feature branch
 
-1. Go to your repository on GitHub
-2. Click **Settings** → **Pages**
-3. Under **Source**, select **Deploy from a branch**
-4. Choose branch: `feature/complete-refactoring` (or `main` after merging)
-5. Choose folder: `/ (root)`
-6. Click **Save**
+3. **Access your site:**
+   - Wait 1-2 minutes for deployment
+   - Access at: `https://your-username.github.io/Portfolio-Website/`
 
-### Step 3: Wait for Deployment
+### Option 2: Deploy Main Branch (Production)
 
-- GitHub will deploy your site in 1-2 minutes
-- Access your site at: `https://your-username.github.io/Portfolio-Website/`
+1. **Merge feature branch to main:**
+   ```bash
+   git checkout main
+   git merge feature/complete-refactoring
+   git push origin main
+   ```
 
-### Alternative: Using gh-pages CLI
+2. **Enable GitHub Pages for main branch:**
+   - Go to your repository on GitHub
+   - Click **Settings** → **Pages**
+   - Under **Source**, select **GitHub Actions**
+   - The workflow will automatically deploy main branch
+
+3. **Access your production site:**
+   - Wait 1-2 minutes for deployment
+   - Access at: `https://your-username.github.io/Portfolio-Website/`
+
+### CI/CD Pipeline
+
+The project includes GitHub Actions workflows for automatic deployment:
+
+- **`.github/workflows/deploy.yml`** - Deploys main branch to production
+- **`.github/workflows/deploy-feature.yml`** - Deploys feature branches for testing
+
+Both workflows:
+- Trigger on push to respective branches
+- Deploy to GitHub Pages automatically
+- Use GitHub Actions Pages deployment
+- No manual configuration needed after initial setup
+
+### Manual Deployment (Alternative)
 
 ```bash
 # Install gh-pages (if not installed)
