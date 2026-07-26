@@ -101,23 +101,6 @@ for (let i = 0; i < filterBtn.length; i++) {
   });
 }
 
-// contact form variables
-const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
-const formBtn = document.querySelector("[data-form-btn]");
-
-// add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", function () {
-    // check form validation
-    if (form.checkValidity()) {
-      formBtn.removeAttribute("disabled");
-    } else {
-      formBtn.setAttribute("disabled", "");
-    }
-  });
-}
-
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
@@ -136,33 +119,6 @@ for (let i = 0; i < navigationLinks.length; i++) {
       }
     }
   });
-}
-
-/**
- * SKILL PROGRESS BAR ANIMATION
- * Animate skill progress bars when they come into view
- */
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -100px 0px",
-};
-
-const observer = new IntersectionObserver(function (entries) {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      const skillFills = entry.target.querySelectorAll(".skill-progress-fill");
-      skillFills.forEach((fill) => {
-        const width = fill.getAttribute("data-width");
-        fill.style.width = width + "%";
-      });
-      observer.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
-
-const skillsSection = document.querySelector(".skill");
-if (skillsSection) {
-  observer.observe(skillsSection);
 }
 
 /**
