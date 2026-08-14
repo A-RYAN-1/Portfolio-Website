@@ -6,6 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aryan's Portfolio</title>
 
+    <meta
+      name="description"
+      content="Portfolio of Aryan Deshmukh, an Associate Software Engineer at Josh Software building backend systems in Go and Ruby on Rails — IoT data pipelines, billing systems, and cloud automation on AWS."
+    />
+    <meta name="theme-color" content="#121212" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Aryan Deshmukh — Portfolio" />
+    <meta
+      property="og:description"
+      content="Associate Software Engineer at Josh Software building backend systems in Go and Ruby on Rails — IoT data pipelines, billing systems, and cloud automation on AWS."
+    />
+    <meta property="og:image" content="./assets/images/Aryan.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Aryan Deshmukh — Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Associate Software Engineer at Josh Software building backend systems in Go and Ruby on Rails — IoT data pipelines, billing systems, and cloud automation on AWS."
+    />
+    <meta name="twitter:image" content="./assets/images/Aryan.png" />
+
     <link
       rel="shortcut icon"
       href="./assets/images/logo.ico"
@@ -67,27 +89,13 @@
 
             <li class="contact-item">
               <div class="icon-box">
-                <ion-icon name="phone-portrait-outline"></ion-icon>
-              </div>
-
-              <div class="contact-info">
-                <p class="contact-title">Phone</p>
-
-                <a href="tel:+917522932355" class="contact-link"
-                  >+91 7522932355</a
-                >
-              </div>
-            </li>
-
-            <li class="contact-item">
-              <div class="icon-box">
                 <ion-icon name="location-outline"></ion-icon>
               </div>
 
               <div class="contact-info">
                 <p class="contact-title">Location</p>
 
-                <address>Maharashtra, India</address>
+                <address>Pune, Maharashtra</address>
               </div>
             </li>
           </ul>
@@ -161,33 +169,35 @@
 
           <section class="about-text">
   <p>
-    I am an Associate Software Engineer at Josh Software with experience in
-    building production backend systems and distributed applications. I work
-    primarily with Go, Ruby on Rails, PostgreSQL, and REST APIs, developing
-    scalable applications that focus on system reliability, performance, and
-    maintainability.
+    I'm an Associate Software Engineer at Josh Software, where I build
+    production backend systems in Go and Ruby on Rails. My work centers on
+    IoT data pipelines, billing systems, and the APIs and background jobs
+    that keep them reliable at scale.
   </p>
 
   <p>
-    At Josh Software, I have worked on large-scale IoT data ingestion pipelines,
-    billing systems, background jobs, and production debugging. My work involves
-    diagnosing and resolving data inconsistency issues, implementing automated
-    reporting systems, and building APIs that handle complex business logic while
-    ensuring data consistency across distributed systems.
+    On the SimplySmart platform, I've traced inconsistent water meter
+    readings back to MQTT ingestion issues, cut data inconsistencies by 90%
+    by moving the pipeline to asynchronous processing, and built background
+    jobs that detect non-responsive and abnormally-consuming meters and
+    report on them automatically via AWS SES. I also debug production
+    billing defects — arrears, penalties, due-date logic — and ship the
+    APIs that let admins fix consumption data without touching the Rails
+    console.
   </p>
 
   <p>
-    Beyond my professional work, I build full-stack applications that solve
-    real-world problems. From decentralized blockchain applications to mobile
-    and web platforms, I focus on clean architecture and scalable design
-    patterns while continuously learning modern software engineering practices.
+    Beyond backend work, I build the React interfaces that sit on top of
+    these systems — admin dashboards, approval workflows, fraud-detection
+    tooling — and handle staging deployments and cloud automation on AWS, so
+    I end up working the full path from database to browser.
   </p>
 
   <p>
-    I am particularly interested in Backend Engineering, Distributed Systems,
-    System Design, and IoT platforms. I enjoy exploring how large-scale systems
-    are architected and continuously improving my technical skills by learning
-    modern technologies and engineering principles.
+    I'm most interested in backend engineering, distributed systems, and IoT
+    platforms — how large-scale systems stay reliable under real-world data,
+    and how to design them so they're easy to operate, not just easy to
+    build.
   </p>
 
   <p>
@@ -204,20 +214,19 @@
               <li class="service-item">
                 <div class="service-icon-box">
                   <img
-                    src="./assets/images/icon-design.svg"
-                    alt="design icon"
+                    src="./assets/images/icon-backend.svg"
+                    alt="backend engineering icon"
                     width="40"
                   />
                 </div>
 
                 <div class="service-content-box">
-                  <h4 class="h4 service-item-title">Web Design</h4>
+                  <h4 class="h4 service-item-title">Backend Engineering</h4>
 
                   <p class="service-item-text">
-                    I design clean, modern, and user-focused interfaces with an
-                    emphasis on usability and simplicity. My approach combines
-                    aesthetics with functionality to deliver intuitive user
-                    experiences.
+                    I build production APIs, background jobs, and data
+                    pipelines in Go and Ruby on Rails, focused on reliability
+                    and performance at scale.
                   </p>
                 </div>
               </li>
@@ -226,18 +235,18 @@
                 <div class="service-icon-box">
                   <img
                     src="./assets/images/icon-dev.svg"
-                    alt="Web development icon"
+                    alt="full-stack development icon"
                     width="40"
                   />
                 </div>
 
                 <div class="service-content-box">
-                  <h4 class="h4 service-item-title">Web Development</h4>
+                  <h4 class="h4 service-item-title">Full-Stack Development</h4>
 
                   <p class="service-item-text">
-                    I build scalable web applications using modern technologies
-                    like React, Next.js, and Ruby on Rails, focusing on
-                    performance, maintainability, and clean architecture.
+                    I build React admin dashboards wired to Rails and Go
+                    backends, handling everything from the UI to the API to
+                    the database.
                   </p>
                 </div>
               </li>
@@ -245,19 +254,19 @@
               <li class="service-item">
                 <div class="service-icon-box">
                   <img
-                    src="./assets/images/icon-app.svg"
-                    alt="mobile app icon"
+                    src="./assets/images/icon-cloud.svg"
+                    alt="cloud and devops icon"
                     width="40"
                   />
                 </div>
 
                 <div class="service-content-box">
-                  <h4 class="h4 service-item-title">App Development</h4>
+                  <h4 class="h4 service-item-title">Cloud &amp; DevOps</h4>
 
                   <p class="service-item-text">
-                    I develop cross-platform mobile applications using React
-                    Native, integrating real-time data, authentication systems,
-                    and seamless user experiences for practical use cases.
+                    I automate reporting and deployments on AWS, from SES-based
+                    alerting to staging environments, keeping services
+                    observable and easy to ship.
                   </p>
                 </div>
               </li>
@@ -265,20 +274,19 @@
               <li class="service-item">
                 <div class="service-icon-box">
                   <img
-                    src="./assets/images/icon-photo.svg"
-                    alt="machine learning icon"
+                    src="./assets/images/icon-network.svg"
+                    alt="distributed systems and IoT icon"
                     width="40"
                   />
                 </div>
 
                 <div class="service-content-box">
-                  <h4 class="h4 service-item-title">Machine Learning</h4>
+                  <h4 class="h4 service-item-title">Distributed Systems &amp; IoT</h4>
 
                   <p class="service-item-text">
-                    I explore machine learning concepts by building practical
-                    models and applications, focusing on data preprocessing,
-                    model building, and applying ML techniques to solve
-                    real-world problems.
+                    I work on MQTT ingestion pipelines and billing systems
+                    that process real-time data from thousands of connected
+                    devices.
                   </p>
                 </div>
               </li>
@@ -286,15 +294,15 @@
           </section>
 
           <section class="testimonials">
-            <h3 class="h3 testimonials-title">Testimonials</h3>
+            <h3 class="h3 testimonials-title">Certifications &amp; Achievements</h3>
 
             <ul class="testimonials-list has-scrollbar">
               <li class="testimonials-item">
                 <div class="content-card" data-testimonials-item>
                   <figure class="testimonials-avatar-box">
                     <img
-                      src="./assets/images/avatar-1.png"
-                      alt="Reference avatar"
+                      src="./assets/images/icon-cloud.svg"
+                      alt="AWS certification icon"
                       width="60"
                       data-testimonials-avatar
                     />
@@ -304,15 +312,70 @@
                     class="h4 testimonials-item-title"
                     data-testimonials-title
                   >
-                    Professional Reference Available Upon Request
+                    AWS Certified — Credly
                   </h4>
 
                   <div class="testimonials-text" data-testimonials-text>
                     <p>
-                      Professional references from Josh Software leadership team
-                      are available upon request to discuss my contributions to
-                      production backend systems, IoT platform development, and
-                      system reliability improvements.
+                      Earned an AWS certification through Credly, applying
+                      cloud fundamentals directly to SES-based reporting
+                      automation and staging deployments at Josh Software.
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item>
+                  <figure class="testimonials-avatar-box">
+                    <img
+                      src="./assets/images/icon-app.svg"
+                      alt="React Native certification icon"
+                      width="60"
+                      data-testimonials-avatar
+                    />
+                  </figure>
+
+                  <h4
+                    class="h4 testimonials-item-title"
+                    data-testimonials-title
+                  >
+                    React Native Certified — Coursera
+                  </h4>
+
+                  <div class="testimonials-text" data-testimonials-text>
+                    <p>
+                      Completed Coursera's React Native certification, later
+                      applied it building Cash Your Coupons, a full-stack
+                      coupon marketplace app on Expo.
+                    </p>
+                  </div>
+                </div>
+              </li>
+
+              <li class="testimonials-item">
+                <div class="content-card" data-testimonials-item>
+                  <figure class="testimonials-avatar-box">
+                    <img
+                      src="./assets/images/icon-network.svg"
+                      alt="leadership icon"
+                      width="60"
+                      data-testimonials-avatar
+                    />
+                  </figure>
+
+                  <h4
+                    class="h4 testimonials-item-title"
+                    data-testimonials-title
+                  >
+                    Vice President — CSI Student Chapter, KKWIEER
+                  </h4>
+
+                  <div class="testimonials-text" data-testimonials-text>
+                    <p>
+                      Selected among 500+ candidates to lead initiatives and
+                      coordinate events for the CSI Student Chapter
+                      (Sept 2024 – Sept 2025).
                     </p>
                   </div>
                 </div>
@@ -335,8 +398,8 @@
               <div class="modal-img-wrapper">
                 <figure class="modal-avatar-box">
                   <img
-                    src="./assets/images/avatar-1.png"
-                    alt="Reference avatar"
+                    src="./assets/images/icon-cloud.svg"
+                    alt="AWS certification icon"
                     width="80"
                     data-modal-img
                   />
@@ -347,15 +410,14 @@
 
               <div class="modal-content">
                 <h4 class="h3 modal-title" data-modal-title>
-                  Professional Reference Available Upon Request
+                  AWS Certified — Credly
                 </h4>
 
                 <div class="modal-text" data-modal-text>
                   <p>
-                    Professional references from Josh Software leadership team
-                    are available upon request to discuss my contributions to
-                    production backend systems, IoT platform development, and
-                    system reliability improvements.
+                    Earned an AWS certification through Credly, applying
+                    cloud fundamentals directly to SES-based reporting
+                    automation and staging deployments at Josh Software.
                   </p>
                 </div>
               </div>
@@ -682,12 +744,12 @@
           <section class="mapbox" data-mapbox>
             <figure>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29763.05081543975!2d79.63275227592445!3d21.177004552591775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a2b38aba7629c35%3A0xeb5bb18c18ae8f17!2sBhandara%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1737121037209!5m2!1sen!2sin"
+                src="https://www.google.com/maps?q=Pune,+Maharashtra,+India&output=embed"
                 width="400"
                 height="300"
                 class="map-frame"
                 allowfullscreen=""
-                title="Location Map of Bhandara, Maharashtra"
+                title="Location Map of Pune, Maharashtra"
               ></iframe>
             </figure>
           </section>

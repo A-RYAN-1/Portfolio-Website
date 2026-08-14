@@ -145,17 +145,3 @@ backToTopBtn.addEventListener("click", function () {
     behavior: "smooth",
   });
 });
-
-/**
- * PROJECT CARD HOVER ENHANCEMENT
- * Add subtle animations to project cards
- */
-const projectItems = document.querySelectorAll(".project-item");
-projectItems.forEach((item) => {
-  item.addEventListener("mouseenter", function () {
-    this.style.transform = "scale(1.02)";
-  });
-  item.addEventListener("mouseleave", function () {
-    this.style.transform = "scale(1)";
-  });
-});

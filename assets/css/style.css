@@ -1853,16 +1853,6 @@ article {
   box-shadow: -4px 8px 24px hsla(0, 0%, 0%, 0.3);
 }
 
-/* Professional Hover States - Very Subtle */
-.project-item {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 16px hsla(0, 0%, 0%, 0.4);
-}
-
 .project-img img {
   transition: transform 0.4s ease, filter 0.3s ease;
 }
@@ -2058,17 +2048,12 @@ article {
 }
 
 .project-category {
-  background: linear-gradient(135deg, var(--yellow-1), var(--orange-yellow));
+  background: linear-gradient(135deg, var(--orange-yellow-crayola), var(--vegas-gold));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-weight: 600;
   font-size: 0.875rem;
-}
-
-/* Smooth Scroll Behavior */
-html {
-  scroll-behavior: smooth;
 }
 
 /* Back to Top Button (for future use) */
@@ -2078,7 +2063,7 @@ html {
   right: 40px;
   width: 50px;
   height: 50px;
-  background: var(--yellow-1);
+  background: var(--orange-yellow-crayola);
   color: var(--eerie-black-1);
   border: none;
   border-radius: 50%;
