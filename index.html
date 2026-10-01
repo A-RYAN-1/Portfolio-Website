@@ -137,6 +137,16 @@
                 <ion-icon name="logo-github"></ion-icon>
               </a>
             </li>
+            <li class="social-item">
+              <a
+                href="https://medium.com/@aryan0deshmukh"
+                class="social-link"
+                title="Read my blogs on Medium"
+                aria-label="Medium"
+              >
+                <ion-icon name="logo-medium"></ion-icon>
+              </a>
+            </li>
           </ul>
         </div>
       </aside>
@@ -204,6 +214,17 @@
     Outside of tech, I enjoy playing basketball and following sports. I believe
     teamwork, discipline, and continuous learning are essential in software
     engineering, and I strive to bring that mindset into every project I work on.
+  </p>
+
+  <p>
+    I also write about the production bugs I chase — read them on
+    <a
+      href="https://medium.com/@aryan0deshmukh"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-link"
+      >Medium</a
+    >.
   </p>
 </section>
 
@@ -709,31 +730,92 @@
           <header>
             <h2 class="h2 article-title">Blog</h2>
             <p class="humorous-line">
-              While I haven't had the opportunity to publish any research papers
-              yet, it's something I aspire to do in the near future. Until then,
-              I enjoy writing down my thoughts and reflections. In this journey,
-              I came across a small quote that resonates with me deeply.
+              Debugging stories from production backend and IoT systems — what
+              broke, why it broke, and what the fix taught me.
             </p>
+            <blockquote class="blog-quote">
+              "The day I understand the blurred line of difference between
+              being content and being complacent is the day I feel salvation."
+            </blockquote>
           </header>
 
           <section class="blog-posts">
             <ul class="blog-posts-list">
               <li class="blog-post-item">
-                <div class="blog-content">
-                  <div class="blog-meta">
-                    <p class="blog-category">Quote</p>
-                    <span class="dot"></span>
-                    <time datetime="2022-02-23">Feb 23, 2022</time>
+                <a
+                  href="https://medium.com/@aryan0deshmukh/the-restart-command-that-only-worked-when-a-human-typed-it-941d30319d22"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <figure class="blog-banner-box">
+                    <img
+                      src="./assets/images/blog/restart-command-human-typed.jpg"
+                      alt="The same restart command run by a person ends in a green tick; run by a process supervisor it ends in a red cross."
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">DevOps</p>
+                      <span class="dot"></span>
+                      <time datetime="2026-10-01">Oct 1, 2026</time>
+                    </div>
+                    <h3 class="h3 blog-item-title">
+                      The Restart Command That Only Worked When a Human Typed It
+                    </h3>
+                    <p class="blog-text">
+                      A supervisor noticed the crash, ran the restart and failed
+                      every time. The command was right. The shell it ran in was
+                      not.
+                    </p>
                   </div>
-                  <h3 class="h3 blog-item-title">
-                    "The day I understand the blurred line of difference between
-                    being content and being complacent is the day I feel
-                    salvation."
-                  </h3>
-                </div>
+                </a>
+              </li>
+
+              <li class="blog-post-item">
+                <a
+                  href="https://medium.com/@aryan0deshmukh/the-water-that-flowed-backwards-2a7d6bb04c7c"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <figure class="blog-banner-box">
+                    <img
+                      src="./assets/images/blog/water-that-flowed-backwards.jpg"
+                      alt="A bar chart of one flat's water use per minute: steady bars, then one dipping below zero, then one twice the usual height."
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <div class="blog-content">
+                    <div class="blog-meta">
+                      <p class="blog-category">Distributed Systems</p>
+                      <span class="dot"></span>
+                      <time datetime="2026-09-30">Sep 30, 2026</time>
+                    </div>
+                    <h3 class="h3 blog-item-title">
+                      The Water That Flowed Backwards
+                    </h3>
+                    <p class="blog-text">
+                      One line of Go made our water meters report negative
+                      consumption. The fix we added afterwards was the same bug
+                      in disguise.
+                    </p>
+                  </div>
+                </a>
               </li>
             </ul>
           </section>
+
+          <a
+            href="https://medium.com/@aryan0deshmukh"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cta-link"
+          >
+            <ion-icon name="logo-medium" class="cta-icon"></ion-icon>
+            <span>Read all on Medium</span>
+          </a>
         </article>
 
         <article class="contact" data-page="contact">
@@ -757,15 +839,27 @@
           <section class="contact-form">
             <h3 class="h3 form-title">Contact Me</h3>
 
-            <a
-              href="https://www.linkedin.com/in/aryan-deshmukh-793840259/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="linkedin-link"
-            >
-              <ion-icon name="logo-linkedin" class="linkedin-icon"></ion-icon>
-              <span>Connect on LinkedIn</span>
-            </a>
+            <div class="cta-list">
+              <a
+                href="https://www.linkedin.com/in/aryan-deshmukh-793840259/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cta-link"
+              >
+                <ion-icon name="logo-linkedin" class="cta-icon"></ion-icon>
+                <span>Connect on LinkedIn</span>
+              </a>
+
+              <a
+                href="https://medium.com/@aryan0deshmukh"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cta-link"
+              >
+                <ion-icon name="logo-medium" class="cta-icon"></ion-icon>
+                <span>Follow on Medium</span>
+              </a>
+            </div>
           </section>
         </article>
       </div>
