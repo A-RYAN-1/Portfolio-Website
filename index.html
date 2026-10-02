@@ -82,7 +82,7 @@
                 <p class="contact-title">Email</p>
 
                 <a href="mailto:aryan0deshmukh@gmail.com" class="contact-link"
-                  >aryan0deshmukh@gmail.com</a
+                  >aryan0deshmukh@<wbr />gmail.com</a
                 >
               </div>
             </li>
@@ -156,6 +156,10 @@
           <ul class="navbar-list">
             <li class="navbar-item">
               <button class="navbar-link active" data-nav-link>About</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Resume</button>
             </li>
 
             <li class="navbar-item">
@@ -323,7 +327,7 @@
                   <figure class="testimonials-avatar-box">
                     <img
                       src="./assets/images/icon-cloud.svg"
-                      alt="AWS certification icon"
+                      alt="AWS Educate badge icon"
                       width="60"
                       data-testimonials-avatar
                     />
@@ -333,14 +337,14 @@
                     class="h4 testimonials-item-title"
                     data-testimonials-title
                   >
-                    AWS Certified — Credly
+                    AWS Educate badges — Credly
                   </h4>
 
                   <div class="testimonials-text" data-testimonials-text>
                     <p>
-                      Earned an AWS certification through Credly, applying
-                      cloud fundamentals directly to SES-based reporting
-                      automation and staging deployments at Josh Software.
+                      Earned AWS Educate cloud badges through Credly, and apply
+                      the fundamentals in SES-based reporting automation and
+                      staging deployments at Josh Software.
                     </p>
                   </div>
                 </div>
@@ -351,7 +355,7 @@
                   <figure class="testimonials-avatar-box">
                     <img
                       src="./assets/images/icon-app.svg"
-                      alt="React Native certification icon"
+                      alt="React Native course certificate icon"
                       width="60"
                       data-testimonials-avatar
                     />
@@ -361,13 +365,13 @@
                     class="h4 testimonials-item-title"
                     data-testimonials-title
                   >
-                    React Native Certified — Coursera
+                    React Native course certificate — Meta, Coursera
                   </h4>
 
                   <div class="testimonials-text" data-testimonials-text>
                     <p>
-                      Completed Coursera's React Native certification, later
-                      applied it building Cash Your Coupons, a full-stack
+                      Completed Meta's React Native course on Coursera
+                      (March 2025), then built Cash Your Coupons, a full-stack
                       coupon marketplace app on Expo.
                     </p>
                   </div>
@@ -420,7 +424,7 @@
                 <figure class="modal-avatar-box">
                   <img
                     src="./assets/images/icon-cloud.svg"
-                    alt="AWS certification icon"
+                    alt="AWS Educate badge icon"
                     width="80"
                     data-modal-img
                   />
@@ -431,19 +435,45 @@
 
               <div class="modal-content">
                 <h4 class="h3 modal-title" data-modal-title>
-                  AWS Certified — Credly
+                  AWS Educate badges — Credly
                 </h4>
 
                 <div class="modal-text" data-modal-text>
                   <p>
-                    Earned an AWS certification through Credly, applying
-                    cloud fundamentals directly to SES-based reporting
-                    automation and staging deployments at Josh Software.
+                    Earned AWS Educate cloud badges through Credly, and apply
+                      the fundamentals in SES-based reporting automation and
+                      staging deployments at Josh Software.
                   </p>
                 </div>
               </div>
             </section>
           </div>
+        </article>
+
+        <article class="resume" data-page="resume">
+          <header>
+            <h2 class="h2 article-title">Resume</h2>
+          </header>
+
+          <section class="resume-viewer">
+            <a href="./assets/Aryan_Deshmukh_Resume.pdf" target="_blank" rel="noopener noreferrer">
+              <img
+                src="./assets/images/resume-preview.jpg"
+                alt="Aryan Deshmukh's one-page resume. Select to open the PDF."
+                class="resume-image"
+                loading="lazy"
+              />
+            </a>
+          </section>
+
+          <a
+            href="./assets/Aryan_Deshmukh_Resume.pdf"
+            download="Aryan_Deshmukh_Resume.pdf"
+            class="cta-link"
+          >
+            <ion-icon name="download-outline" class="cta-icon"></ion-icon>
+            <span>Download resume (PDF)</span>
+          </a>
         </article>
 
         <article class="portfolio" data-page="portfolio">
@@ -825,23 +855,25 @@
             <h2 class="h2 article-title">Contact</h2>
           </header>
 
-          <section class="mapbox" data-mapbox>
-            <figure>
-              <iframe
-                src="https://www.google.com/maps?q=Pune,+Maharashtra,+India&output=embed"
-                width="400"
-                height="300"
-                class="map-frame"
-                allowfullscreen=""
-                title="Location Map of Pune, Maharashtra"
-              ></iframe>
-            </figure>
-          </section>
-
           <section class="contact-form">
             <h3 class="h3 form-title">Contact Me</h3>
 
             <div class="cta-list">
+              <a href="mailto:aryan0deshmukh@gmail.com" class="cta-link">
+                <ion-icon name="mail-outline" class="cta-icon"></ion-icon>
+                <span class="no-caps">aryan0deshmukh@gmail.com</span>
+              </a>
+
+              <a
+                href="https://github.com/A-RYAN-1"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cta-link"
+              >
+                <ion-icon name="logo-github" class="cta-icon"></ion-icon>
+                <span>Code on GitHub</span>
+              </a>
+
               <a
                 href="https://www.linkedin.com/in/aryan-deshmukh-793840259/"
                 target="_blank"
@@ -860,6 +892,15 @@
               >
                 <ion-icon name="logo-medium" class="cta-icon"></ion-icon>
                 <span>Follow on Medium</span>
+              </a>
+
+              <a
+                href="./assets/Aryan_Deshmukh_Resume.pdf"
+                download="Aryan_Deshmukh_Resume.pdf"
+                class="cta-link"
+              >
+                <ion-icon name="document-text-outline" class="cta-icon"></ion-icon>
+                <span>Download resume</span>
               </a>
             </div>
           </section>

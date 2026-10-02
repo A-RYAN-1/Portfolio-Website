@@ -1150,29 +1150,33 @@ main {
   #CONTACT
 \*-----------------------------------*/
 
-.mapbox {
-  position: relative;
-  height: 250px;
-  width: 100%;
-  border-radius: var(--radius-lg);
-  margin-bottom: var(--space-5);
-  border: 1px solid var(--jet);
-  overflow: hidden;
-}
 
-.mapbox figure {
-  height: 100%;
-}
 
-.mapbox iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  filter: grayscale(1) invert(1);
-}
 
 .contact-form {
   margin-bottom: 10px;
+}
+
+/**
+ * #RESUME
+ */
+
+.resume-viewer {
+  border: 1px solid var(--jet);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-5);
+  background: #fff;
+}
+
+.resume-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cta-link .no-caps {
+  text-transform: none;
 }
 
 .form-title {
@@ -1508,10 +1512,6 @@ main {
    * #CONTACT
    */
 
-  .mapbox {
-    height: 380px;
-    border-radius: 18px;
-  }
 
 }
 
@@ -1854,9 +1854,7 @@ main {
   }
 
   .contact-info :is(.contact-link) {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
   }
 
   .contact-info :is(.contact-link, time, address) {
