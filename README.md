@@ -169,11 +169,10 @@ docs/images/               README screenshots only
 | CI | One workflow deploys on every push to `main` (`static.yml`); it does not lint or test |
 | Security | Static files only: no forms, no server, no cookies, no secrets; external links use `rel="noopener noreferrer"` |
 | Content check | The text is checked against a list of private names before every push, and every claim is traced to a recorded source |
-| Lighthouse, live, mobile preset (2026-10-16, before the avatar fix) | Performance 65, Accessibility 96, Best Practices 100, SEO 92 |
-| Lighthouse, live, desktop preset (2026-10-16, before the avatar fix) | Performance 59, Accessibility 96, Best Practices 100, SEO 100 |
-| Lighthouse, local, mobile / desktop, after the fix (2026-10-16) | Performance 84 / 91, Accessibility 96, Best Practices 100, SEO 100 |
+| Lighthouse, live, mobile preset (2026-10-16) | Performance 81 (was 65), Accessibility 96, Best Practices 100, SEO 92 |
+| Lighthouse, live, desktop preset (2026-10-16) | Performance 98 (was 59), Accessibility 96, Best Practices 100, SEO 100 |
 
-The largest-contentful-paint element was the profile photo: a 1.6 MB PNG shown at 80 px wide. Replacing it with a 400 px JPEG (18 KB) took local mobile performance from 67 to 84 and desktop from 89 to 91. The live scores above are re-measured after the fix is deployed.
+The largest-contentful-paint element was the profile photo: a 1.6 MB PNG shown at 80 px wide. Replacing it with a 400 px JPEG (18 KB) lifted live mobile performance from 65 to 81 and desktop from 59 to 98, measured before and after on the live URL the same day.
 
 Run the same measurement:
 
@@ -234,7 +233,7 @@ The resume PDF and its preview image on the Resume tab are replaced by a script 
 
 ## Status and roadmap
 
-**Reached:** live on a free tier. URL opens and every tab and the project filter work (checked 2026-10-16); Lighthouse measured the same day.
+**Reached:** live on a free tier. URL opens and every tab and the project filter work (checked 2026-10-16); Lighthouse measured before and after the fix the same day.
 
 **Known limitations**
 
@@ -246,7 +245,6 @@ The resume PDF and its preview image on the Resume tab are replaced by a script 
 
 **Planned**
 
-- [ ] Re-measure Lighthouse on the live URL after the avatar fix is deployed and record it here
 - [ ] Fix the colour-only link style flagged by Lighthouse
 - [ ] Self-host the font and icons to drop two third-party requests
 - [ ] Add a link checker to the deploy workflow
