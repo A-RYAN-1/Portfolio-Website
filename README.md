@@ -168,7 +168,7 @@ docs/images/               README screenshots only
 
 | Area | What is in place |
 |---|---|
-| Tests | Node's built-in runner covers the search and category matching rule (`node --test tests/`); the page itself is checked by hand |
+| Tests | Node's built-in runner covers the search and category matching rule (`node --test tests/project-filter.test.js`); the page itself is checked by hand |
 | CI | `ci.yml` runs the unit tests on every pull request and push to `main`; `static.yml` deploys on every push to `main` |
 | Security | Static files only: no forms, no server, no cookies, no secrets; external links use `rel="noopener noreferrer"` |
 | Content check | The text is checked against a list of private names before every push, and every claim is traced to a recorded source |

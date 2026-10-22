@@ -17,4 +17,4 @@ jobs:
         with:
           node-version: 22
       - name: Unit tests
-        run: node --test tests/
+        run: node --test tests/project-filter.test.js
