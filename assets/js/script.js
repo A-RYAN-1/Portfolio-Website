@@ -74,17 +74,30 @@ for (let i = 0; i < selectItems.length; i++) {
 // filter variables
 const filterItems = document.querySelectorAll("[data-filter-item]");
 
-const filterFunc = function (selectedValue) {
+const searchInput = document.querySelector("[data-project-search]");
+const searchStatus = document.querySelector("[data-project-status]");
+let currentCategory = "all";
+
+const applyFilters = function () {
+  let shown = 0;
   for (let i = 0; i < filterItems.length; i++) {
-    if (selectedValue === "all") {
-      filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
-      filterItems[i].classList.add("active");
-    } else {
-      filterItems[i].classList.remove("active");
-    }
+    const card = {
+      category: filterItems[i].dataset.category,
+      text: filterItems[i].textContent + " " + (filterItems[i].querySelector("img")?.alt || ""),
+    };
+    const visible = projectFilter.cardMatches(card, currentCategory, searchInput.value);
+    filterItems[i].classList.toggle("active", visible);
+    if (visible) shown++;
   }
+  searchStatus.textContent = projectFilter.resultLabel(shown);
 };
+
+const filterFunc = function (selectedValue) {
+  currentCategory = selectedValue;
+  applyFilters();
+};
+
+searchInput.addEventListener("input", applyFilters);
 
 // add event in all filter button items for large screen
 let lastClickedBtn = filterBtn[0];

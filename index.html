@@ -483,6 +483,19 @@
           </header>
 
           <section class="projects">
+            <div class="project-search">
+              <label class="project-search-label" for="project-search-input">Search projects</label>
+              <input
+                id="project-search-input"
+                class="project-search-input"
+                type="search"
+                placeholder="Search by name, language or topic"
+                autocomplete="off"
+                data-project-search
+              />
+              <p class="project-search-status" role="status" data-project-status></p>
+            </div>
+
             <ul class="filter-list">
               <li class="filter-item">
                 <button class="active" data-filter-btn>All</button>
@@ -1019,6 +1032,7 @@
       </div>
     </main>
 
+    <script src="./assets/js/project-filter.js"></script>
     <script src="./assets/js/script.js"></script>
 
     <script

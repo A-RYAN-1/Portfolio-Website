@@ -61,7 +61,7 @@ Open **https://a-ryan-1.github.io/Portfolio-Website/**. No login, nothing to ins
 Things to try in the first two minutes:
 
 1. On **Portfolio**, click **Open Source**: the cards are merged pull requests in projects with over a thousand stars, each linking to the PR.
-2. Click **Web Development** or **Machine Learning**: the filter narrows the cards without a page reload.
+2. Type `go` or `kepler` in the search box: the cards narrow as you type and a line under the box says how many are shown. Combine it with a category button.
 3. Open **Resume**: the current PDF is embedded as a preview and can be downloaded.
 4. Open **Blog**: the engineering posts, each card linking to the Medium story.
 5. Resize the window or open it on a phone: the sidebar collapses into a header and the grids reflow.
@@ -82,6 +82,7 @@ Screenshots are of the live site, taken 2026-10-16 at 1440x900 (phone: 390x844).
 ## Features
 
 - **Five tabs on one page**: About, Resume, Portfolio, Blog, Contact, switched in the browser without loading another page.
+- **Search on the Portfolio tab**: type a name, language or topic; every word must match, and it combines with the category filter.
 - **Filterable project grid**: All, Open Source, Web Development, App Development, Machine Learning, Others; a dropdown replaces the buttons on small screens.
 - **Merged open-source work**: one card per merged pull request with a preview image and the repository's language and star count.
 - **Resume tab**: the current resume PDF, previewed and downloadable, plus a download link on the Contact tab.
@@ -153,8 +154,10 @@ index.html                 the whole site: five tabs, every card
 assets/
   css/style.css            all styling
   js/script.js             tab switching, project filter, modal
+  js/project-filter.js     the search and category matching rule (unit tested)
   images/                  photo, project, blog and open-source images, icons
   Aryan_Deshmukh_Resume.pdf   the current resume, shown in the Resume tab
+tests/                     Node tests for the matching rule
 docs/images/               README screenshots only
 .github/workflows/static.yml   deploys to GitHub Pages on push to main
 ```
@@ -165,8 +168,8 @@ docs/images/               README screenshots only
 
 | Area | What is in place |
 |---|---|
-| Tests | None. The site has no logic beyond tab and filter toggles; see Known limitations |
-| CI | One workflow deploys on every push to `main` (`static.yml`); it does not lint or test |
+| Tests | Node's built-in runner covers the search and category matching rule (`node --test tests/project-filter.test.js`); the page itself is checked by hand |
+| CI | `ci.yml` runs the unit tests on every pull request and push to `main`; `static.yml` deploys on every push to `main` |
 | Security | Static files only: no forms, no server, no cookies, no secrets; external links use `rel="noopener noreferrer"` |
 | Content check | The text is checked against a list of private names before every push, and every claim is traced to a recorded source |
 | Lighthouse, live, mobile preset (2026-10-16) | Performance 81 (was 65), Accessibility 96, Best Practices 100, SEO 92 |
@@ -237,9 +240,8 @@ The resume PDF and its preview image on the Resume tab are replaced by a script 
 
 **Known limitations**
 
-- No automated tests and no lint step; checks are manual.
+- Only the search rule has automated tests, and there is no lint step; the rest is checked by hand.
 - Accessibility is 96, not 100: Lighthouse flags links inside text that are told apart by colour only.
-- The Portfolio tab is one long list of cards and has no search.
 - The contact tab is links only (email, GitHub, LinkedIn, Medium); there is no form, on purpose.
 - Fonts and icons come from third-party CDNs, so the page looks plainer offline.
 
