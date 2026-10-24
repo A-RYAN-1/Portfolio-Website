@@ -134,6 +134,22 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
+// deep links: /#resume, /#portfolio, /#blog, /#contact open that tab, and clicking a tab updates the address
+for (let i = 0; i < navigationLinks.length; i++) {
+  navigationLinks[i].addEventListener("click", function () {
+    history.replaceState(null, "", "#" + this.innerHTML.toLowerCase());
+  });
+}
+const startPage = location.hash.slice(1).toLowerCase();
+if (startPage) {
+  for (let i = 0; i < navigationLinks.length; i++) {
+    if (navigationLinks[i].innerHTML.toLowerCase() === startPage) {
+      navigationLinks[i].click();
+      window.scrollTo(0, 0);
+    }
+  }
+}
+
 /**
  * BACK TO TOP BUTTON
  * Show/hide button and scroll to top functionality
