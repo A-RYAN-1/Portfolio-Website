@@ -118,37 +118,60 @@ for (let i = 0; i < filterBtn.length; i++) {
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
-// add event to all nav link
+// show one tab: the page and its nav link are matched by name, not by position
+const showTab = function (name) {
+  for (let i = 0; i < pages.length; i++) {
+    const on = pages[i].dataset.page === name;
+    pages[i].classList.toggle("active", on);
+    navigationLinks[i].classList.toggle("active", on);
+  }
+  window.scrollTo(0, 0);
+};
+
+// the Portfolio filter button for a category, to click it as a visitor would
+const filterButtonFor = function (category) {
+  for (let i = 0; i < filterBtn.length; i++) {
+    if (filterBtn[i].innerText.toLowerCase() === category) return filterBtn[i];
+  }
+  return filterBtn[0];
+};
+
+// deep links: the address holds the tab (#resume) and the Portfolio filter (#portfolio-open-source)
+const openFromHash = function () {
+  const target = tabHash.parseHash(location.hash);
+  showTab(target.tab);
+  filterButtonFor(target.category).click();
+};
+
+const currentTab = function () {
+  return document.querySelector("[data-page].active").dataset.page;
+};
+
+// a tab click adds a history entry so back and forward switch tabs
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
-    for (let i = 0; i < pages.length; i++) {
-      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
-        pages[i].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
-      } else {
-        pages[i].classList.remove("active");
-        navigationLinks[i].classList.remove("active");
-      }
-    }
+    const name = this.innerHTML.toLowerCase();
+    showTab(name);
+    const hash = tabHash.buildHash(name, currentCategory);
+    if (hash !== location.hash) history.pushState(null, "", hash);
   });
 }
 
-// deep links: /#resume, /#portfolio, /#blog, /#contact open that tab, and clicking a tab updates the address
-for (let i = 0; i < navigationLinks.length; i++) {
-  navigationLinks[i].addEventListener("click", function () {
-    history.replaceState(null, "", "#" + this.innerHTML.toLowerCase());
+// a filter click rewrites the address in place
+for (let i = 0; i < filterBtn.length; i++) {
+  filterBtn[i].addEventListener("click", function () {
+    history.replaceState(null, "", tabHash.buildHash(currentTab(), currentCategory));
   });
 }
-const startPage = location.hash.slice(1).toLowerCase();
-if (startPage) {
-  for (let i = 0; i < navigationLinks.length; i++) {
-    if (navigationLinks[i].innerHTML.toLowerCase() === startPage) {
-      navigationLinks[i].click();
-      window.scrollTo(0, 0);
-    }
-  }
+for (let i = 0; i < selectItems.length; i++) {
+  selectItems[i].addEventListener("click", function () {
+    history.replaceState(null, "", tabHash.buildHash(currentTab(), currentCategory));
+  });
 }
+
+window.addEventListener("hashchange", openFromHash);
+window.addEventListener("popstate", openFromHash);
+if (location.hash) openFromHash();
 
 /**
  * BACK TO TOP BUTTON
