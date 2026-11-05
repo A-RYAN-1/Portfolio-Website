@@ -156,23 +156,27 @@
         <nav class="navbar">
           <ul class="navbar-list">
             <li class="navbar-item">
-              <button class="navbar-link active" data-nav-link>About</button>
+              <button class="navbar-link active" data-nav-link="about">About</button>
             </li>
 
             <li class="navbar-item">
-              <button class="navbar-link" data-nav-link>Resume</button>
+              <button class="navbar-link" data-nav-link="resume">Resume</button>
             </li>
 
             <li class="navbar-item">
-              <button class="navbar-link" data-nav-link>Portfolio</button>
+              <button class="navbar-link" data-nav-link="open-source">Open Source</button>
             </li>
 
             <li class="navbar-item">
-              <button class="navbar-link" data-nav-link>Blog</button>
+              <button class="navbar-link" data-nav-link="projects">Projects</button>
             </li>
 
             <li class="navbar-item">
-              <button class="navbar-link" data-nav-link>Contact</button>
+              <button class="navbar-link" data-nav-link="blog">Blog</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link="contact">Contact</button>
             </li>
           </ul>
         </nav>
@@ -477,80 +481,17 @@
           </a>
         </article>
 
-        <article class="portfolio" data-page="portfolio">
+        <article class="portfolio open-source" data-page="open-source">
           <header>
-            <h2 class="h2 article-title">Portfolio</h2>
+            <h2 class="h2 article-title">Open Source</h2>
           </header>
 
           <section class="projects">
-            <div class="project-search">
-              <label class="project-search-label" for="project-search-input">Search projects</label>
-              <input
-                id="project-search-input"
-                class="project-search-input"
-                type="search"
-                placeholder="Search by name, language or topic"
-                autocomplete="off"
-                data-project-search
-              />
-              <p class="project-search-status" role="status" data-project-status></p>
-            </div>
-
-            <ul class="filter-list">
-              <li class="filter-item">
-                <button class="active" data-filter-btn>All</button>
-              </li>
-
-              <li class="filter-item">
-                <button data-filter-btn>Open Source</button>
-              </li>
-
-              <li class="filter-item">
-                <button data-filter-btn>Web Development</button>
-              </li>
-
-              <li class="filter-item">
-                <button data-filter-btn>App Development</button>
-              </li>
-
-              <li class="filter-item">
-                <button data-filter-btn>Others</button>
-              </li>
-            </ul>
-
-            <div class="filter-select-box">
-              <button class="filter-select" data-select>
-                <div class="select-value" data-selecct-value>
-                  Select category
-                </div>
-
-                <div class="select-icon">
-                  <ion-icon name="chevron-down"></ion-icon>
-                </div>
-              </button>
-
-              <ul class="select-list">
-                <li class="select-item">
-                  <button data-select-item>All</button>
-                </li>
-
-                <li class="select-item">
-                  <button data-select-item>Open Source</button>
-                </li>
-
-                <li class="select-item">
-                  <button data-select-item>Web Development</button>
-                </li>
-
-                <li class="select-item">
-                  <button data-select-item>App Development</button>
-                </li>
-
-                <li class="select-item">
-                  <button data-select-item>Others</button>
-                </li>
-              </ul>
-            </div>
+            <p class="oss-proof">
+              <!-- oss-stats:start -->
+              <strong>19</strong> merged pull requests in <strong>10</strong> projects with <strong>95k</strong> GitHub stars combined, newest first.
+              <!-- oss-stats:end -->
+            </p>
 
             <ul class="project-list">
               <!-- oss-cards:start -->
@@ -805,7 +746,85 @@
               </li>
 
               <!-- oss-cards:end -->
+            </ul>
 
+            <a
+              class="cta-link oss-all-link"
+              href="https://github.com/pulls?q=is%3Apr+author%3AA-RYAN-1+is%3Amerged+-user%3AA-RYAN-1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Every merged pull request on GitHub</a>
+          </section>
+        </article>
+
+        <article class="portfolio" data-page="projects">
+          <header>
+            <h2 class="h2 article-title">Projects</h2>
+          </header>
+
+          <section class="projects">
+            <div class="project-search">
+              <label class="project-search-label" for="project-search-input">Search projects</label>
+              <input
+                id="project-search-input"
+                class="project-search-input"
+                type="search"
+                placeholder="Search by name, language or topic"
+                autocomplete="off"
+                data-project-search
+              />
+              <p class="project-search-status" role="status" data-project-status></p>
+            </div>
+
+            <ul class="filter-list">
+              <li class="filter-item">
+                <button class="active" data-filter-btn>All</button>
+              </li>
+
+              <li class="filter-item">
+                <button data-filter-btn>Web Development</button>
+              </li>
+
+              <li class="filter-item">
+                <button data-filter-btn>App Development</button>
+              </li>
+
+              <li class="filter-item">
+                <button data-filter-btn>Others</button>
+              </li>
+            </ul>
+
+            <div class="filter-select-box">
+              <button class="filter-select" data-select>
+                <div class="select-value" data-selecct-value>
+                  Select category
+                </div>
+
+                <div class="select-icon">
+                  <ion-icon name="chevron-down"></ion-icon>
+                </div>
+              </button>
+
+              <ul class="select-list">
+                <li class="select-item">
+                  <button data-select-item>All</button>
+                </li>
+
+                <li class="select-item">
+                  <button data-select-item>Web Development</button>
+                </li>
+
+                <li class="select-item">
+                  <button data-select-item>App Development</button>
+                </li>
+
+                <li class="select-item">
+                  <button data-select-item>Others</button>
+                </li>
+              </ul>
+            </div>
+
+            <ul class="project-list">
               <!-- Node Connect - Blockchain Chat -->
               <li
                 class="project-item active"

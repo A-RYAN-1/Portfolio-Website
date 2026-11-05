@@ -72,7 +72,8 @@ for (let i = 0; i < selectItems.length; i++) {
 }
 
 // filter variables
-const filterItems = document.querySelectorAll("[data-filter-item]");
+// only the Projects tab filters; the Open Source cards are always shown
+const filterItems = document.querySelectorAll('[data-page="projects"] [data-filter-item]');
 
 const searchInput = document.querySelector("[data-project-search]");
 const searchStatus = document.querySelector("[data-project-status]");
@@ -121,14 +122,15 @@ const pages = document.querySelectorAll("[data-page]");
 // show one tab: the page and its nav link are matched by name, not by position
 const showTab = function (name) {
   for (let i = 0; i < pages.length; i++) {
-    const on = pages[i].dataset.page === name;
-    pages[i].classList.toggle("active", on);
-    navigationLinks[i].classList.toggle("active", on);
+    pages[i].classList.toggle("active", pages[i].dataset.page === name);
+  }
+  for (let i = 0; i < navigationLinks.length; i++) {
+    navigationLinks[i].classList.toggle("active", navigationLinks[i].dataset.navLink === name);
   }
   window.scrollTo(0, 0);
 };
 
-// the Portfolio filter button for a category, to click it as a visitor would
+// the Projects filter button for a category, to click it as a visitor would
 const filterButtonFor = function (category) {
   for (let i = 0; i < filterBtn.length; i++) {
     if (filterBtn[i].innerText.toLowerCase() === category) return filterBtn[i];
@@ -136,7 +138,7 @@ const filterButtonFor = function (category) {
   return filterBtn[0];
 };
 
-// deep links: the address holds the tab (#resume) and the Portfolio filter (#portfolio-open-source)
+// deep links: the address holds the tab (#resume) and the Projects filter (#projects-web-development)
 const openFromHash = function () {
   const target = tabHash.parseHash(location.hash);
   showTab(target.tab);
@@ -150,7 +152,7 @@ const currentTab = function () {
 // a tab click adds a history entry so back and forward switch tabs
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
-    const name = this.innerHTML.toLowerCase();
+    const name = this.dataset.navLink;
     showTab(name);
     const hash = tabHash.buildHash(name, currentCategory);
     if (hash !== location.hash) history.pushState(null, "", hash);
