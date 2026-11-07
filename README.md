@@ -67,15 +67,15 @@ Open **https://a-ryan-1.github.io/Portfolio-Website/**. No login, nothing to ins
 Things to try in the first two minutes:
 
 1. Open **Open Source**: the line at the top counts merged pull requests, projects and combined stars, and the six newest merges below it are filled in from the [open-source site](https://a-ryan-1.github.io/oss/) when the page loads.
-2. On **Projects**, type `go` or `react` in the search box: the cards narrow as you type. Each card's picture is a fresh screenshot of the live project and its link opens the case study on the [projects site](https://a-ryan-1.github.io/builds/).
+2. On **Projects**, type `go` or `react` in the search box: the cards narrow as you type. Each card's link opens the project's case study on the [projects site](https://a-ryan-1.github.io/builds/).
 3. Open **Resume**: the current PDF is embedded as a preview and can be downloaded.
 4. Open **Blog**: the engineering posts, each card linking to the Medium story.
 5. Resize the window or open it on a phone: the sidebar collapses into a header and the grids reflow.
 
 <table>
   <tr>
-    <td width="50%" valign="top"><img src="docs/images/open-source.jpg" alt="The Open Source tab with the live merged-PR count and the six newest merged pull requests"><p align="center"><sub>Open Source tab, filled from the oss site's summary.json (<a href="#how-it-works">how it works</a>)</sub></p></td>
-    <td width="50%" valign="top"><img src="docs/images/projects.jpg" alt="The Projects tab with a search box, category filters and project cards showing live screenshots"><p align="center"><sub>Projects tab, with live screenshots from the builds site (<a href="#features">features</a>)</sub></p></td>
+    <td width="50%" valign="top"><img src="docs/images/open-source.jpg" alt="The Open Source tab with the live merged-PR count, six pull requests per page and page numbers"><p align="center"><sub>Open Source tab, filled from the oss site's summary.json (<a href="#how-it-works">how it works</a>)</sub></p></td>
+    <td width="50%" valign="top"><img src="docs/images/projects.jpg" alt="The Projects tab with category filters and project cards"><p align="center"><sub>Projects tab, cards linking to their case studies on the builds site (<a href="#features">features</a>)</sub></p></td>
   </tr>
   <tr>
     <td width="50%" valign="top"><img src="docs/images/resume.jpg" alt="The Resume tab with the embedded PDF preview"><p align="center"><sub>Resume tab, the same PDF as in applications (<a href="#deployment">how it is updated</a>)</sub></p></td>
@@ -94,8 +94,8 @@ Screenshots are of the live site, taken 2026-11-07 at 1440x900 (phone: 390x844 a
 - **Six tabs on one page**: About, Resume, Open Source, Projects, Blog, Contact, switched in the browser without loading another page. Each tab has its own address (`#open-source`, `#projects-web-development`), and links shared before the split (`#portfolio`, `#portfolio-open-source`) still open the right tab.
 - **Search on the Projects tab**: type a name, language or topic; every word must match, and it combines with the category filter.
 - **Filterable project grid**: All, Web Development, App Development, Others; a dropdown replaces the buttons on small screens.
-- **Open Source tab**: a proof line and the six newest merged pull requests, filled in the browser from https://a-ryan-1.github.io/oss/summary.json by `assets/js/site-highlights.js`; the full list is on that site, which rebuilds itself from GitHub every six hours.
-- **Projects tab**: the cards are curated here, but each card's image is replaced by a fresh screenshot of the live site and its link points to the case study on https://a-ryan-1.github.io/builds/ (from that site's `summary.json`).
+- **Open Source tab**: a proof line and every merged pull request, six per page, newest first, filled in the browser from https://a-ryan-1.github.io/oss/summary.json by `assets/js/site-highlights.js`. The page is kept in the URL (`?oss=2#open-source`) so a page can be linked and Back works; the full list is on that site, which rebuilds itself from GitHub every six hours.
+- **Projects tab**: the cards and their pictures are curated here (`assets/images/project-*`); each card's link is pointed at the case study on https://a-ryan-1.github.io/builds/ (from that site's `summary.json`).
 - **Resume tab**: the current resume PDF, previewed and downloadable, plus a download link on the Contact tab.
 - **Blog tab**: a card per published post, linking to Medium.
 - **Responsive layout**: profile sidebar on desktop, collapsible on mobile.
@@ -138,7 +138,7 @@ sequenceDiagram
     GP-->>Me: site updated, usually within a minute
 ```
 
-There is no build: the repository is the site. Tab switching and the project filter are a few dozen lines of DOM code in `assets/js/script.js` that toggle an `active` class; every card is plain HTML in `index.html`. On load, `assets/js/site-highlights.js` fetches the two `summary.json` files, fills the Open Source tab and swaps each project card's picture and link; if a request fails the static text and the link to the full site stay.
+There is no build: the repository is the site. Tab switching and the project filter are a few dozen lines of DOM code in `assets/js/script.js` that toggle an `active` class; every card is plain HTML in `index.html`. On load, `assets/js/site-highlights.js` fetches the two `summary.json` files, fills and paginates the Open Source tab and points each project card's link at its case study; if a request fails the static text and the link to the full site stay.
 
 ### Tech stack
 
@@ -168,7 +168,7 @@ assets/
   css/style.css            all styling
   js/script.js             tab switching, project filter, modal
   js/project-filter.js     the search and category matching rule (unit tested)
-  js/site-highlights.js    fills the Open Source tab and project pictures from the sister sites (unit tested)
+  js/site-highlights.js    fills the paginated Open Source tab and project links from the sister sites (unit tested)
   js/tab-hash.js           tab addresses such as #open-source (unit tested)
   images/                  photo, project, blog and open-source images, icons
   Aryan_Deshmukh_Resume.pdf   the current resume, shown in the Resume tab
