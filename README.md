@@ -2,7 +2,8 @@
 
 <p align="center">
   The personal site of Aryan Deshmukh, a backend engineer: projects, merged open-source work, blog posts and the current resume.<br>
-  One static page, no build step, deployed to GitHub Pages on every push to <code>main</code>.
+  One static page, no build step, deployed to GitHub Pages on every push to <code>main</code>.<br>
+  Its Open Source tab and project pictures fill in live from two sister sites that rebuild themselves from GitHub.
 </p>
 
 <p align="center">
@@ -15,9 +16,14 @@
   <a href="#run-it-locally">Run locally</a>
   &middot;
   <a href="#deployment">Deployment</a>
+  &middot;
+  <a href="https://a-ryan-1.github.io/oss/">Open-source site</a>
+  &middot;
+  <a href="https://a-ryan-1.github.io/builds/">Projects site</a>
 </p>
 
 <p align="center">
+  <a href="https://a-ryan-1.github.io/Portfolio-Website/"><img src="https://img.shields.io/badge/Try%20it%20live-open-brightgreen" alt="Try it live"></a>
   <img src="https://img.shields.io/badge/HTML5-static-E34F26?logo=html5&logoColor=white" alt="HTML5, static">
   <img src="https://img.shields.io/badge/CSS3-custom_properties-1572B6?logo=css3&logoColor=white" alt="CSS3">
   <img src="https://img.shields.io/badge/JavaScript-vanilla-F7DF1E?logo=javascript&logoColor=black" alt="Vanilla JavaScript">
@@ -26,11 +32,11 @@
 
 <p align="center">
   <a href="https://a-ryan-1.github.io/Portfolio-Website/">
-    <img src="docs/images/about.png" width="90%" alt="The About tab: profile card on the left, a short bio and the four areas of work on the right">
+    <img src="docs/images/about.jpg" width="90%" alt="The About tab: profile card on the left, a short bio and the four areas of work on the right">
   </a>
 </p>
 
-<p align="center"><sub>Last updated: 2026-10-16 &middot; Live on a free tier (GitHub Pages)</sub></p>
+<p align="center"><sub>Last updated: 2026-11-07 &middot; Live on a free tier (GitHub Pages)</sub></p>
 
 ---
 
@@ -52,7 +58,7 @@
 
 A recruiter or interviewer who has my resume wants the next thing within a minute: the work behind it, the code, the writing. This site is that page. Every project card links to its repository and live demo, every open-source card links to the merged pull request, and the Resume tab shows the same PDF I send with applications.
 
-It is deliberately small: five tabs on one HTML page, plain CSS and about 150 lines of JavaScript, so it loads fast, has nothing to keep patched and can be read end to end in a few minutes.
+It is deliberately small: six tabs on one HTML page, plain CSS and about 200 lines of JavaScript, so it loads fast, has nothing to keep patched and can be read end to end in a few minutes.
 
 ## Try it live
 
@@ -60,24 +66,28 @@ Open **https://a-ryan-1.github.io/Portfolio-Website/**. No login, nothing to ins
 
 Things to try in the first two minutes:
 
-1. Open **Open Source**: a generated line counts the merged pull requests, projects and combined stars, and each card is one upstream project linking to my merged PRs there.
-2. On **Projects**, type `go` or `react` in the search box: the cards narrow as you type and a line under the box says how many are shown. Combine it with a category button.
+1. Open **Open Source**: the line at the top counts merged pull requests, projects and combined stars, and the six newest merges below it are filled in from the [open-source site](https://a-ryan-1.github.io/oss/) when the page loads.
+2. On **Projects**, type `go` or `react` in the search box: the cards narrow as you type. Each card's picture is a fresh screenshot of the live project and its link opens the case study on the [projects site](https://a-ryan-1.github.io/builds/).
 3. Open **Resume**: the current PDF is embedded as a preview and can be downloaded.
 4. Open **Blog**: the engineering posts, each card linking to the Medium story.
 5. Resize the window or open it on a phone: the sidebar collapses into a header and the grids reflow.
 
 <table>
   <tr>
-    <td width="50%"><img src="docs/images/open-source.png" alt="The Open Source tab with the merged-PR count and one card per upstream project"><p align="center"><sub>Open Source tab, generated from merged PRs (<a href="#how-it-works">how it works</a>)</sub></p></td>
-    <td width="50%"><img src="docs/images/resume.png" alt="The Resume tab with the embedded PDF preview"><p align="center"><sub>Resume tab, the same PDF as in applications (<a href="#deployment">how it is updated</a>)</sub></p></td>
+    <td width="50%" valign="top"><img src="docs/images/open-source.jpg" alt="The Open Source tab with the live merged-PR count and the six newest merged pull requests"><p align="center"><sub>Open Source tab, filled from the oss site's summary.json (<a href="#how-it-works">how it works</a>)</sub></p></td>
+    <td width="50%" valign="top"><img src="docs/images/projects.jpg" alt="The Projects tab with a search box, category filters and project cards showing live screenshots"><p align="center"><sub>Projects tab, with live screenshots from the builds site (<a href="#features">features</a>)</sub></p></td>
   </tr>
   <tr>
-    <td width="50%"><img src="docs/images/blog.png" alt="The Blog tab with post cards"><p align="center"><sub>Blog tab (<a href="#how-it-works">how it works</a>)</sub></p></td>
-    <td width="50%"><img src="docs/images/mobile.png" alt="The About tab on a phone-sized screen"><p align="center"><sub>Phone layout (<a href="#engineering-quality">measured</a>)</sub></p></td>
+    <td width="50%" valign="top"><img src="docs/images/resume.jpg" alt="The Resume tab with the embedded PDF preview"><p align="center"><sub>Resume tab, the same PDF as in applications (<a href="#deployment">how it is updated</a>)</sub></p></td>
+    <td width="50%" valign="top"><img src="docs/images/blog.jpg" alt="The Blog tab with post cards"><p align="center"><sub>Blog tab, a card per published post (<a href="#how-it-works">how it works</a>)</sub></p></td>
   </tr>
 </table>
 
-Screenshots are of the live site, taken 2026-10-16 at 1440x900 (phone: 390x844).
+<p align="center"><img src="docs/images/mobile.jpg" width="26%" alt="The About tab on a phone-sized screen: the profile card collapses into a header"></p>
+
+<p align="center"><sub>On a phone the sidebar collapses into a header and the grids reflow (<a href="#engineering-quality">measured</a>)</sub></p>
+
+Screenshots are of the live site, taken 2026-11-07 at 1440x900 (phone: 390x844 at 2x).
 
 ## Features
 
@@ -103,6 +113,7 @@ flowchart LR
     GP --> H[index.html + style.css + script.js]
     V -->|fonts| GF[Google Fonts]
     V -->|icons| UP[unpkg.com ionicons]
+    V -->|"summary.json, on load"| SIB["oss and builds sites (Pages)"]
     subgraph Repo [Repository, branch main]
       H
       A[assets: images, resume PDF]
@@ -127,7 +138,7 @@ sequenceDiagram
     GP-->>Me: site updated, usually within a minute
 ```
 
-There is no build: the repository is the site. Tab switching and the project filter are a few dozen lines of DOM code in `assets/js/script.js` that toggle an `active` class; every card is plain HTML in `index.html`.
+There is no build: the repository is the site. Tab switching and the project filter are a few dozen lines of DOM code in `assets/js/script.js` that toggle an `active` class; every card is plain HTML in `index.html`. On load, `assets/js/site-highlights.js` fetches the two `summary.json` files, fills the Open Source tab and swaps each project card's picture and link; if a request fails the static text and the link to the full site stay.
 
 ### Tech stack
 
@@ -136,6 +147,7 @@ There is no build: the repository is the site. Tab switching and the project fil
 | Markup | One HTML5 page, semantic sections per tab |
 | Styling | Plain CSS in `assets/css/style.css` (custom properties, grid, flexbox) |
 | Behaviour | Vanilla JavaScript, no framework, no bundler |
+| Live data | `summary.json` of the [oss](https://a-ryan-1.github.io/oss/) and [builds](https://a-ryan-1.github.io/builds/) sites, read in the browser by `assets/js/site-highlights.js` |
 | Fonts and icons | Poppins from Google Fonts; Ionicons 5.5.2 from unpkg |
 | Hosting | GitHub Pages |
 | Deploy | GitHub Actions (`.github/workflows/static.yml`) |
@@ -143,7 +155,7 @@ There is no build: the repository is the site. Tab switching and the project fil
 ### Design decisions
 
 1. **No framework and no build step.** The site is content, not an app. Trade-off: every card is hand-edited or generated HTML, with no component reuse.
-2. **Cards are generated from evidence, not typed.** Open-source cards come from merged PRs and blog cards from published posts, produced by scripts that live outside this repository and paste HTML into `index.html`. Trade-off: the generated blocks must not be edited by hand, or the next run overwrites them.
+2. **Cards come from evidence, not from typing.** Open Source cards and project pictures are read from two self-updating sites at page load, and blog cards are generated from published posts by a script outside this repository. Trade-off: the Open Source tab needs the oss site to be reachable (it falls back to a link), and the generated blog block must not be edited by hand.
 3. **The repository root is the deploy artifact.** The workflow uploads everything, so `docs/` and the README are also served. Trade-off: nothing private may ever be committed here.
 4. **Template as a starting point.** The layout started from an open-source vCard portfolio template; content, structure and styling since then are mine. Trade-off: some CSS is more verbose than it needs to be.
 
@@ -156,9 +168,11 @@ assets/
   css/style.css            all styling
   js/script.js             tab switching, project filter, modal
   js/project-filter.js     the search and category matching rule (unit tested)
+  js/site-highlights.js    fills the Open Source tab and project pictures from the sister sites (unit tested)
+  js/tab-hash.js           tab addresses such as #open-source (unit tested)
   images/                  photo, project, blog and open-source images, icons
   Aryan_Deshmukh_Resume.pdf   the current resume, shown in the Resume tab
-tests/                     Node tests for the matching rule
+tests/                     Node tests for the three scripts above
 docs/images/               README screenshots only
 .github/workflows/static.yml   deploys to GitHub Pages on push to main
 ```
@@ -169,14 +183,14 @@ docs/images/               README screenshots only
 
 | Area | What is in place |
 |---|---|
-| Tests | Node's built-in runner covers the search and category matching rule (`node --test tests/project-filter.test.js`); the page itself is checked by hand |
+| Tests | Node's built-in runner covers the search rule, the tab addresses and the sister-site data handling: 17 tests, all passing on 2026-11-07 (`node --test tests/*.test.js`); the page itself is checked by hand |
 | CI | `ci.yml` runs the unit tests on every pull request and push to `main`; `static.yml` deploys on every push to `main` |
 | Security | Static files only: no forms, no server, no cookies, no secrets; external links use `rel="noopener noreferrer"` |
 | Content check | The text is checked against a list of private names before every push, and every claim is traced to a recorded source |
-| Lighthouse, live, mobile preset (2026-10-16) | Performance 81 (was 65), Accessibility 96, Best Practices 100, SEO 92 |
-| Lighthouse, live, desktop preset (2026-10-16) | Performance 98 (was 59), Accessibility 96, Best Practices 100, SEO 100 |
+| Lighthouse, live, mobile preset (2026-11-07) | Performance 83, Accessibility 96, Best Practices 100, SEO 100 |
+| Lighthouse, live, desktop preset (2026-11-07) | Performance 93, Accessibility 96, Best Practices 100, SEO 100 |
 
-The largest-contentful-paint element was the profile photo: a 1.6 MB PNG shown at 80 px wide. Replacing it with a 400 px JPEG (18 KB) lifted live mobile performance from 65 to 81 and desktop from 59 to 98, measured before and after on the live URL the same day.
+On 2026-10-16 the largest-contentful-paint element was the profile photo: a 1.6 MB PNG shown at 80 px wide. Replacing it with a 400 px JPEG (18 KB) lifted live mobile performance from 65 to 81 and desktop from 59 to 98, measured before and after on the live URL the same day. The 2026-11-07 numbers are the next measurement, after the tabs started loading live data and screenshots.
 
 Run the same measurement:
 
@@ -237,11 +251,12 @@ The resume PDF and its preview image on the Resume tab are replaced by a script 
 
 ## Status and roadmap
 
-**Reached:** live on a free tier. URL opens and every tab and the project filter work (checked 2026-10-16); Lighthouse measured before and after the fix the same day.
+**Reached:** live on a free tier. URL opens and every tab, the project filter and the live Open Source tab work (checked 2026-11-07); Lighthouse re-measured on 2026-11-07.
 
 **Known limitations**
 
-- Only the search rule has automated tests, and there is no lint step; the rest is checked by hand.
+- Only three scripts have automated tests (17 tests), and there is no lint step; the markup is checked by hand.
+- The Open Source tab and the project pictures need the oss and builds sites to be reachable; without them the page shows its static text and the link.
 - Accessibility is 96, not 100: Lighthouse flags links inside text that are told apart by colour only.
 - The contact tab is links only (email, GitHub, LinkedIn, Medium); there is no form, on purpose.
 - Fonts and icons come from third-party CDNs, so the page looks plainer offline.
