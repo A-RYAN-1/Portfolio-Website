@@ -187,8 +187,8 @@ docs/images/               README screenshots only
 | CI | `ci.yml` runs the unit tests on every pull request and push to `main`; `static.yml` deploys on every push to `main` |
 | Security | Static files only: no forms, no server, no cookies, no secrets; external links use `rel="noopener noreferrer"` |
 | Content check | The text is checked against a list of private names before every push, and every claim is traced to a recorded source |
-| Lighthouse, live, mobile preset (2026-11-07) | Performance 83, Accessibility 96, Best Practices 100, SEO 100 |
-| Lighthouse, live, desktop preset (2026-11-07) | Performance 93, Accessibility 96, Best Practices 100, SEO 100 |
+| Lighthouse, live, mobile preset (2026-11-07, after pagination) | Performance 88 (83 earlier that day), Accessibility 96, Best Practices 100, SEO 100 |
+| Lighthouse, live, desktop preset (2026-11-07, after pagination) | Performance 96 (93 earlier that day), Accessibility 96, Best Practices 100, SEO 100 |
 
 On 2026-10-16 the largest-contentful-paint element was the profile photo: a 1.6 MB PNG shown at 80 px wide. Replacing it with a 400 px JPEG (18 KB) lifted live mobile performance from 65 to 81 and desktop from 59 to 98, measured before and after on the live URL the same day. The 2026-11-07 numbers are the next measurement, after the tabs started loading live data and screenshots.
 
