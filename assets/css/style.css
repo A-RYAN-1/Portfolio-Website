@@ -2222,3 +2222,9 @@ article {
   margin-top: 20px;
   width: fit-content;
 }
+
+/* Link to the self-updating oss and builds sites, above each tab's cards */
+.site-link {
+  margin-bottom: 24px;
+  width: fit-content;
+}
