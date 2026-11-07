@@ -99,3 +99,29 @@ test("the blog page lives in ?blog=n and leaves the rest of the query alone", ()
   assert.equal(h.searchWithPage("?oss=2", "blog", 4), "?oss=2&blog=4");
   assert.equal(h.searchWithPage("", "blog", 2), "?blog=2");
 });
+
+test("a project's filter category comes from its topics", () => {
+  assert.equal(h.categoryFor({ topics: ["expo", "react-native", "firebase"] }), "app development");
+  assert.equal(h.categoryFor({ topics: ["gin", "go", "react"] }), "web development");
+  assert.equal(h.categoryFor({ topics: ["mediapipe", "opencv"] }), "others");
+  assert.equal(h.categoryFor({}), "others");
+});
+
+test("only projects with a title and a safe case-study link are drawn, in the order given", () => {
+  const items = h.projectItems({
+    all: [
+      { title: "A", url: "https://a-ryan-1.github.io/builds/p/a/" },
+      { title: "B", url: "javascript:alert(1)" },
+      { url: "https://a-ryan-1.github.io/builds/p/c/" },
+      { title: "D", url: "https://a-ryan-1.github.io/builds/p/d/" },
+    ],
+  });
+  assert.deepEqual(items.map((p) => p.title), ["A", "D"]);
+  assert.deepEqual(h.projectItems({}), []);
+});
+
+test("the card line is the language then up to three topics", () => {
+  assert.equal(h.projectLine({ language: "Go", topics: ["a", "b", "c", "d"] }), "Go, a, b, c");
+  assert.equal(h.projectLine({ topics: ["x"] }), "x");
+  assert.equal(h.projectLine({ language: "Python" }), "Python");
+});

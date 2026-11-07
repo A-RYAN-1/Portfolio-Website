@@ -73,13 +73,15 @@ for (let i = 0; i < selectItems.length; i++) {
 
 // filter variables
 // only the Projects tab filters; the Open Source cards are always shown
-const filterItems = document.querySelectorAll('[data-page="projects"] [data-filter-item]');
+// (read on every filter, because site-highlights.js replaces the cards once the builds summary arrives)
+const projectCards = () => document.querySelectorAll('[data-page="projects"] [data-filter-item]');
 
 const searchInput = document.querySelector("[data-project-search]");
 const searchStatus = document.querySelector("[data-project-status]");
 let currentCategory = "all";
 
 const applyFilters = function () {
+  const filterItems = projectCards();
   let shown = 0;
   for (let i = 0; i < filterItems.length; i++) {
     const card = {
@@ -92,6 +94,8 @@ const applyFilters = function () {
   }
   searchStatus.textContent = projectFilter.resultLabel(shown);
 };
+
+document.addEventListener("projects:rendered", applyFilters);
 
 const filterFunc = function (selectedValue) {
   currentCategory = selectedValue;

@@ -3,7 +3,8 @@
 //   https://a-ryan-1.github.io/oss/summary.json     counts and every merged pull request, newest first
 //   https://a-ryan-1.github.io/builds/summary.json  every project and its case-study page
 //   https://a-ryan-1.github.io/blogs/summary.json   every published post, newest first
-// The Projects card pictures are the portfolio's own images in assets/images and are never swapped.
+// The Projects tab is drawn from the builds summary (title, one line, language, topics, case-study link). A card
+// keeps the portfolio's own picture when the static fallback had one for that repository, else the site's image.
 // Nothing here is hand-kept. If a request fails, the page keeps its static text and the link to the full site.
 // Kept free of the DOM where possible so tests/site-highlights.test.js can run it in Node.
 (function (root) {
@@ -49,6 +50,29 @@
       if (k) out[k] = p;
     });
     return out;
+  }
+
+  // The Projects filter has three buttons. Mobile apps are "app development", anything with a web stack is
+  // "web development", the rest (libraries, scripts, vision tools) is "others".
+  var WEB = /^(react|nextjs|next-js|express|rails|ruby-on-rails|gin|fastapi|vue|svelte|astro|pern|nodejs|node-js|web3|frontend)$/;
+  var MOBILE = /^(expo|react-native|android|ios|flutter)$/;
+  function categoryFor(p) {
+    var topics = (p && p.topics) || [];
+    if (topics.some(function (t) { return MOBILE.test(t); })) return "app development";
+    if (topics.some(function (t) { return WEB.test(t); })) return "web development";
+    return "others";
+  }
+
+  // Projects with a safe case-study link, in the order the builds site gives (its manifests set the order).
+  function projectItems(summary) {
+    return (summary.all || []).filter(function (p) {
+      return p && p.title && safeUrl(p.url);
+    });
+  }
+
+  // "TypeScript, gin, go, postgresql": language first, then up to three topics.
+  function projectLine(p) {
+    return [p.language].concat((p.topics || []).slice(0, 3)).filter(Boolean).join(", ");
   }
 
   var PAGE_SIZE = 6;
@@ -125,6 +149,9 @@
 
   var api = {
     stars: stars,
+    categoryFor: categoryFor,
+    projectItems: projectItems,
+    projectLine: projectLine,
     month: month,
     longDate: longDate,
     plain: plain,
@@ -342,14 +369,49 @@
     });
   }
 
-  // The cards keep the portfolio's own pictures; only the link changes, to the project's case study.
+  function projectCard(p, localImage) {
+    var li = el("li", "project-item active");
+    li.setAttribute("data-filter-item", "");
+    li.dataset.category = categoryFor(p);
+    var a = el("a");
+    a.href = safeUrl(p.url);
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    var fig = el("figure", "project-img");
+    var box = el("div", "project-item-icon-box");
+    var icon = document.createElement("ion-icon");
+    icon.setAttribute("name", "eye-outline");
+    box.appendChild(icon);
+    fig.appendChild(box);
+    var img = el("img");
+    var src = localImage || safeUrl(p.image);
+    if (src) img.src = src;
+    img.alt = p.title + (p.tagline ? ": " + plain(p.tagline) : "");
+    img.loading = "lazy";
+    fig.appendChild(img);
+    a.appendChild(fig);
+    a.appendChild(el("h3", "project-title", p.title));
+    a.appendChild(el("p", "project-category", projectLine(p)));
+    li.appendChild(a);
+    return li;
+  }
+
+  // The static cards in index.html are only the fallback for a failed request; a good one replaces them.
   function renderProjects(s) {
-    var by = indexBuilds(s);
-    document.querySelectorAll('[data-page="projects"] .project-item > a').forEach(function (a) {
-      var p = by[repoKey(a.getAttribute("href"))];
-      var page = p && safeUrl(p.url);
-      if (page) a.href = page;
+    var items = projectItems(s);
+    var list = document.querySelector('[data-page="projects"] .project-list');
+    if (!list || !items.length) return;
+    var pictures = {};
+    list.querySelectorAll(".project-item > a").forEach(function (a) {
+      var img = a.querySelector("img");
+      var k = repoKey(a.getAttribute("href"));
+      if (k && img) pictures[k] = img.getAttribute("src");
     });
+    list.textContent = "";
+    items.forEach(function (p) {
+      list.appendChild(projectCard(p, pictures[repoKey(p.repo)]));
+    });
+    document.dispatchEvent(new CustomEvent("projects:rendered"));
   }
 
   function run() {
