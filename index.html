@@ -783,8 +783,9 @@
           </header>
 
           <section class="blog-posts">
-            <ul class="blog-posts-list has-scrollbar">
-              <!-- blog-cards:start -->
+            <ul class="blog-posts-list has-scrollbar" data-blog-list>
+              <!-- Fallback cards, frozen 2026-11-07: shown only if the blogs site summary cannot be fetched.
+                   The Blog tab is filled from https://a-ryan-1.github.io/blogs/summary.json (assets/js/site-highlights.js). -->
               <li class="blog-post-item">
                 <a
                   href="https://medium.com/@aryan0deshmukh/the-line-git-blame-cant-see-b151afd654f1"
@@ -911,8 +912,9 @@
                   </div>
                 </a>
               </li>
-              <!-- blog-cards:end -->
             </ul>
+            <nav class="oss-pager" aria-label="Posts, pages" data-blog-pager hidden></nav>
+            <p class="sr-only" role="status" data-blog-status></p>
           </section>
 
           <a

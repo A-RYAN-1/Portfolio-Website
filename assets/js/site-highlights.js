@@ -1,13 +1,15 @@
-// Fills the Open Source tab (paginated) and points the Projects cards at their case studies, from the two
-// self-updating sites:
+// Fills the Open Source tab and the Blog tab (both paginated) and points the Projects cards at their case
+// studies, from three self-updating sites:
 //   https://a-ryan-1.github.io/oss/summary.json     counts and every merged pull request, newest first
 //   https://a-ryan-1.github.io/builds/summary.json  every project and its case-study page
+//   https://a-ryan-1.github.io/blogs/summary.json   every published post, newest first
 // The Projects card pictures are the portfolio's own images in assets/images and are never swapped.
 // Nothing here is hand-kept. If a request fails, the page keeps its static text and the link to the full site.
 // Kept free of the DOM where possible so tests/site-highlights.test.js can run it in Node.
 (function (root) {
   var OSS = "https://a-ryan-1.github.io/oss/summary.json";
   var BUILDS = "https://a-ryan-1.github.io/builds/summary.json";
+  var BLOGS = "https://a-ryan-1.github.io/blogs/summary.json";
 
   function stars(n) {
     if (n >= 1000) return (n / 1000).toFixed(n >= 10000 ? 0 : 1).replace(/\.0$/, "") + "k";
@@ -82,7 +84,29 @@
     return out;
   }
 
-  // The page lives in the query string (?oss=2) so the #open-source tab hash keeps working.
+  // "2026-11-01" -> "Nov 1, 2026".
+  function longDate(iso) {
+    var d = new Date(iso);
+    return MONTHS[d.getUTCMonth()] + " " + d.getUTCDate() + ", " + d.getUTCFullYear();
+  }
+
+  // Post subtitles come from Markdown front matter; show them without the inline marks.
+  function plain(s) {
+    return String(s == null ? "" : s).replace(/[`*]/g, "");
+  }
+
+  // Posts with a safe page link, newest first, whatever order the summary came in.
+  function blogItems(summary) {
+    return (summary.all || summary.latest || [])
+      .filter(function (p) {
+        return p && safeUrl(p.url) && p.title && /^\d{4}-\d{2}-\d{2}$/.test(String(p.publishedAt));
+      })
+      .sort(function (a, b) {
+        return a.publishedAt < b.publishedAt ? 1 : a.publishedAt > b.publishedAt ? -1 : 0;
+      });
+  }
+
+  // The page lives in the query string (?oss=2, ?blog=2) so the #open-source tab hash keeps working.
   function pageFromSearch(search, key) {
     var m = new RegExp("[?&]" + key + "=([^&#]*)").exec(String(search || ""));
     return m ? clampPage(m[1], Infinity) : 1;
@@ -102,6 +126,9 @@
   var api = {
     stars: stars,
     month: month,
+    longDate: longDate,
+    plain: plain,
+    blogItems: blogItems,
     safeUrl: safeUrl,
     proofLine: proofLine,
     repoKey: repoKey,
@@ -133,64 +160,18 @@
     });
   }
 
-  function renderOss(s) {
-    var line = document.querySelector("[data-oss-proof]");
-    if (line) {
-      var p = proofLine(s);
-      line.textContent = "";
-      [
-        [p.merged, " merged pull requests in "],
-        [p.projects, " projects with "],
-        [p.stars, " GitHub stars combined"],
-      ].forEach(function (pair) {
-        line.appendChild(el("strong", null, String(pair[0])));
-        line.appendChild(document.createTextNode(pair[1]));
-      });
-      if (p.inReview) line.appendChild(document.createTextNode(", and " + p.inReview + " more in review. Newest merges first."));
-      else line.appendChild(document.createTextNode(". Newest merges first."));
-    }
-    var list = document.querySelector("[data-oss-latest]");
-    if (!list) return;
-    var items = (s.all || s.latest || []).filter(function (pr) {
-      return safeUrl(pr.url);
-    });
-    var nav = document.querySelector("[data-oss-pager]");
-    var status = document.querySelector("[data-oss-status]");
-    var page = pageFromSearch(location.search, "oss");
-
-    function card(pr) {
-      var li = el("li", "project-item active");
-      var a = el("a");
-      a.href = safeUrl(pr.url);
-      a.target = "_blank";
-      a.rel = "noopener noreferrer";
-      var fig = el("figure", "project-img");
-      var box = el("div", "project-item-icon-box");
-      var icon = document.createElement("ion-icon");
-      icon.setAttribute("name", "eye-outline");
-      box.appendChild(icon);
-      fig.appendChild(box);
-      var img = el("img");
-      var src = safeUrl(pr.image);
-      if (src) img.src = src;
-      img.alt = pr.repo + " #" + pr.number + ": " + pr.title;
-      img.loading = "lazy";
-      // GitHub makes these preview cards on demand and sometimes fails; keep the card tidy if it does.
-      img.addEventListener("error", function () {
-        img.hidden = true;
-        fig.classList.add("project-img-missing");
-      });
-      fig.appendChild(img);
-      a.appendChild(fig);
-      a.appendChild(el("h3", "project-title", pr.repo.split("/")[1] + " #" + pr.number));
-      a.appendChild(el("p", "project-category", [pr.language, stars(pr.stars) + " stars", month(pr.mergedAt)].filter(Boolean).join(" · ")));
-      li.appendChild(a);
-      return li;
-    }
+  // Paginates `items` into `list`, one makeCard(item) each, with the pager in `nav` and a spoken status in
+  // `status`. The page lives in ?<key>=<n> and the tab hash stays, so page links, Back and #<hash> all work.
+  function mountPager(o) {
+    var list = o.list;
+    var nav = o.nav;
+    var status = o.status;
+    var items = o.items;
+    var page = pageFromSearch(location.search, o.key);
 
     function pageLink(n, text, label) {
       var a = el("a", "oss-page", text);
-      a.href = location.pathname + searchWithPage(location.search, "oss", n) + "#open-source";
+      a.href = location.pathname + searchWithPage(location.search, o.key, n) + "#" + o.hash;
       a.dataset.page = String(n);
       if (label) a.setAttribute("aria-label", label);
       return a;
@@ -200,8 +181,8 @@
       var pages = pageCount(items.length);
       page = clampPage(page, pages);
       list.textContent = "";
-      pageSlice(items, page).forEach(function (pr) {
-        list.appendChild(card(pr));
+      pageSlice(items, page).forEach(function (item) {
+        list.appendChild(o.makeCard(item));
       });
       if (nav) {
         nav.textContent = "";
@@ -227,14 +208,14 @@
       }
       if (status) {
         var from = (page - 1) * PAGE_SIZE;
-        status.textContent = items.length ? "Showing " + (from + 1) + " to " + Math.min(from + PAGE_SIZE, items.length) + " of " + items.length + " merged pull requests" : "";
+        status.textContent = items.length ? "Showing " + (from + 1) + " to " + Math.min(from + PAGE_SIZE, items.length) + " of " + items.length + " " + o.label : "";
       }
       if (move) list.scrollIntoView({ block: "start", behavior: "smooth" });
     }
 
     function go(n, push) {
       page = n;
-      if (push) history.pushState(null, "", location.pathname + searchWithPage(location.search, "oss", n) + "#open-source");
+      if (push) history.pushState(null, "", location.pathname + searchWithPage(location.search, o.key, n) + "#" + o.hash);
       draw(push);
     }
 
@@ -246,10 +227,119 @@
         go(parseInt(a.dataset.page, 10), true);
       });
     window.addEventListener("popstate", function () {
-      page = pageFromSearch(location.search, "oss");
+      page = pageFromSearch(location.search, o.key);
       draw(false);
     });
     draw(false);
+  }
+
+  function ossCard(pr) {
+    var li = el("li", "project-item active");
+    var a = el("a");
+    a.href = safeUrl(pr.url);
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    var fig = el("figure", "project-img");
+    var box = el("div", "project-item-icon-box");
+    var icon = document.createElement("ion-icon");
+    icon.setAttribute("name", "eye-outline");
+    box.appendChild(icon);
+    fig.appendChild(box);
+    var img = el("img");
+    var src = safeUrl(pr.image);
+    if (src) img.src = src;
+    img.alt = pr.repo + " #" + pr.number + ": " + pr.title;
+    img.loading = "lazy";
+    // GitHub makes these preview cards on demand and sometimes fails; keep the card tidy if it does.
+    img.addEventListener("error", function () {
+      img.hidden = true;
+      fig.classList.add("project-img-missing");
+    });
+    fig.appendChild(img);
+    a.appendChild(fig);
+    a.appendChild(el("h3", "project-title", pr.repo.split("/")[1] + " #" + pr.number));
+    a.appendChild(el("p", "project-category", [pr.language, stars(pr.stars) + " stars", month(pr.mergedAt)].filter(Boolean).join(" · ")));
+    li.appendChild(a);
+    return li;
+  }
+
+  function blogCard(p) {
+    var li = el("li", "blog-post-item");
+    var a = el("a");
+    a.href = safeUrl(p.url);
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    var fig = el("figure", "blog-banner-box");
+    var img = el("img");
+    var src = safeUrl(p.coverDark || p.cover);
+    if (src) img.src = src;
+    img.alt = p.coverAlt || "";
+    img.loading = "lazy";
+    fig.appendChild(img);
+    a.appendChild(fig);
+    var body = el("div", "blog-content");
+    var meta = el("div", "blog-meta");
+    meta.appendChild(el("p", "blog-category", p.category));
+    meta.appendChild(el("span", "dot"));
+    var t = el("time", null, longDate(p.publishedAt));
+    t.setAttribute("datetime", p.publishedAt);
+    meta.appendChild(t);
+    body.appendChild(meta);
+    body.appendChild(el("h3", "h3 blog-item-title", p.title));
+    body.appendChild(el("p", "blog-text", plain(p.subtitle)));
+    a.appendChild(body);
+    li.appendChild(a);
+    return li;
+  }
+
+  function renderOss(s) {
+    var line = document.querySelector("[data-oss-proof]");
+    if (line) {
+      var p = proofLine(s);
+      line.textContent = "";
+      [
+        [p.merged, " merged pull requests in "],
+        [p.projects, " projects with "],
+        [p.stars, " GitHub stars combined"],
+      ].forEach(function (pair) {
+        line.appendChild(el("strong", null, String(pair[0])));
+        line.appendChild(document.createTextNode(pair[1]));
+      });
+      if (p.inReview) line.appendChild(document.createTextNode(", and " + p.inReview + " more in review. Newest merges first."));
+      else line.appendChild(document.createTextNode(". Newest merges first."));
+    }
+    var list = document.querySelector("[data-oss-latest]");
+    if (!list) return;
+    mountPager({
+      list: list,
+      nav: document.querySelector("[data-oss-pager]"),
+      status: document.querySelector("[data-oss-status]"),
+      items: (s.all || s.latest || []).filter(function (pr) {
+        return safeUrl(pr.url);
+      }),
+      key: "oss",
+      hash: "open-source",
+      label: "merged pull requests",
+      makeCard: ossCard,
+    });
+  }
+
+  // The static cards in index.html are only the fallback for a failed request; a good one replaces them.
+  function renderBlog(s) {
+    var list = document.querySelector("[data-blog-list]");
+    if (!list) return;
+    var items = blogItems(s);
+    if (!items.length) return;
+    mountPager({
+      list: list,
+      nav: document.querySelector("[data-blog-pager]"),
+      status: document.querySelector("[data-blog-status]"),
+      items: items,
+      key: "blog",
+      hash: "blog",
+      label: "posts",
+      makeCard: blogCard,
+    });
   }
 
   // The cards keep the portfolio's own pictures; only the link changes, to the project's case study.
@@ -265,6 +355,7 @@
   function run() {
     getJson(OSS).then(renderOss).catch(function () {});
     getJson(BUILDS).then(renderProjects).catch(function () {});
+    getJson(BLOGS).then(renderBlog).catch(function () {});
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run);
   else run();

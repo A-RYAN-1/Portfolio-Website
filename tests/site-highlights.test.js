@@ -66,3 +66,36 @@ test("the page is kept in the query string and leaves other parameters alone", (
   assert.equal(h.searchWithPage("?oss=2", "oss", 1), "");
   assert.equal(h.searchWithPage("?x=1&oss=2", "oss", 3), "?x=1&oss=3");
 });
+
+test("blog dates read like the card dates", () => {
+  assert.equal(h.longDate("2026-11-01"), "Nov 1, 2026");
+  assert.equal(h.longDate("2026-09-30"), "Sep 30, 2026");
+});
+
+test("post subtitles lose their Markdown marks", () => {
+  assert.equal(h.plain("`size-4` is *not* 16 pixels"), "size-4 is not 16 pixels");
+  assert.equal(h.plain(undefined), "");
+});
+
+test("blog items: newest first, only posts with a safe page link and a date", () => {
+  const items = h.blogItems({
+    all: [
+      { title: "old", url: "https://a-ryan-1.github.io/blogs/p/old/", publishedAt: "2026-09-30" },
+      { title: "bad link", url: "https://evil.example/x", publishedAt: "2026-11-01" },
+      { title: "no date", url: "https://a-ryan-1.github.io/blogs/p/nd/" },
+      { title: "new", url: "https://a-ryan-1.github.io/blogs/p/new/", publishedAt: "2026-11-01" },
+      null,
+    ],
+  });
+  assert.deepEqual(items.map((p) => p.title), ["new", "old"]);
+  assert.deepEqual(h.blogItems({}), []);
+});
+
+test("the blog page lives in ?blog=n and leaves the rest of the query alone", () => {
+  assert.equal(h.pageFromSearch("?blog=3", "blog"), 3);
+  assert.equal(h.pageFromSearch("?oss=2&blog=3", "blog"), 3);
+  assert.equal(h.pageFromSearch("?oss=2", "blog"), 1);
+  assert.equal(h.searchWithPage("?oss=2&blog=3", "blog", 1), "?oss=2");
+  assert.equal(h.searchWithPage("?oss=2", "blog", 4), "?oss=2&blog=4");
+  assert.equal(h.searchWithPage("", "blog", 2), "?blog=2");
+});
