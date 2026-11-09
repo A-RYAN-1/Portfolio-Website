@@ -1,0 +1,20 @@
+documents indexed: 43
+
+dev: 30 questions (22 in scope, 8 out of scope)
+  hit@1 20/22 90.9%   hit@3 21/22 95.5%
+  refused out-of-scope 8/8 100.0%   wrongly refused in-scope 0/22 0.0%
+  MISS {"q":"Does he use React?","why":"wrong cards","got":["project:todo-app-pern","project:cash-your-coupons","cert-2"],"expect":["service-2","project:smart-rule-based-approval-engine","project:fintech-fraud-detection","about-3"]}
+
+fresh: 25 questions (19 in scope, 6 out of scope)
+  hit@1 9/19 47.4%   hit@3 9/19 47.4%
+  refused out-of-scope 6/6 100.0%   wrongly refused in-scope 10/19 52.6%
+  MISS {"q":"I am hiring a backend engineer, which of his repos should I look at first?","why":"refused (uncovered, coverage 0.18)","terms":["hir","backend","engineer","repo","look","first"]}
+  MISS {"q":"anything with Ruby on Rails?","why":"refused (uncovered, coverage 0.47)","terms":["anyth","ruby","rails"]}
+  MISS {"q":"Which upstream repos accepted his patches?","why":"refused (uncovered, coverage 0.20)","terms":["upstream","repo","accept","patch"]}
+  MISS {"q":"Did he change anything in the Helm chart of external-dns?","why":"refused (uncovered, coverage 0.59)","terms":["change","anyth","helm","chart","external","dns"]}
+  MISS {"q":"Which post is about a shell that behaves differently for a supervisor?","why":"refused (uncovered, coverage 0.50)","terms":["post","shell","behave","differently","supervisor"]}
+  MISS {"q":"What did he do for the Actual budgeting app?","why":"refused (uncovered, coverage 0.52)","terms":["actual","budget","application"]}
+  MISS {"q":"What town does he live in?","why":"refused (uncovered, coverage 0.27)","terms":["town","live"]}
+  MISS {"q":"Which of his projects are deployed and can be opened in a browser?","why":"refused (uncovered, coverage 0.57)","terms":["project","deploy","open","browser"]}
+  MISS {"q":"Has he written about Rails configuration problems?","why":"refused (uncovered, coverage 0.33)","terms":["post","rails","configuration","problem"]}
+  MISS {"q":"Tell me about the CopyQ changes","why":"refused (uncovered, coverage 0.43)","terms":["copyq","change"]}

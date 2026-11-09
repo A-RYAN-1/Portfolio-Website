@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "url": "https://a-ryan-1.github.io/blogs/",
+  "posts": 4,
+  "topics": 15,
+  "latestAt": "2026-11-01",
+  "latest": [
+    {
+      "n": 4,
+      "slug": "line-git-blame-cant-see",
+      "title": "The Line git blame Can't See",
+      "subtitle": "git blame tells you who touched a line last. For a line that's already been deleted, it has no answer at all.",
+      "category": "Git",
+      "publishedAt": "2026-11-01",
+      "url": "https://a-ryan-1.github.io/blogs/p/line-git-blame-cant-see/",
+      "medium": "https://medium.com/@aryan0deshmukh/the-line-git-blame-cant-see-b151afd654f1",
+      "cover": "https://a-ryan-1.github.io/blogs/covers/line-git-blame-cant-see.svg",
+      "coverDark": "https://a-ryan-1.github.io/blogs/covers/line-git-blame-cant-see-dark.svg",
+      "coverAlt": "A column of code lines with one line missing, shown as a dashed gap. A magnifying glass beside the gap finds the missing line in a stack of history behind the file."
+    },
+    {
+      "n": 3,
+      "slug": "fix-that-only-reached-half-the-server",
+      "title": "The Fix That Only Reached Half the Server",
+      "subtitle": "We fixed a config file, restarted the app and watched one feature recover. The other kept failing for a day and a half.",
+      "category": "Rails",
+      "publishedAt": "2026-10-15",
+      "url": "https://a-ryan-1.github.io/blogs/p/fix-that-only-reached-half-the-server/",
+      "medium": "https://medium.com/@aryan0deshmukh/the-fix-that-only-reached-half-the-server-942aeb0665ac",
+      "cover": "https://a-ryan-1.github.io/blogs/covers/fix-that-only-reached-half-the-server.svg",
+      "coverDark": "https://a-ryan-1.github.io/blogs/covers/fix-that-only-reached-half-the-server-dark.svg",
+      "coverAlt": "One config file icon at the centre with lines to two processes. The web process on the left ends in a green tick; the background worker on the right ends in a red cross."
+    },
+    {
+      "n": 2,
+      "slug": "restart-command-that-only-worked-when-a-human-typed-it",
+      "title": "The Restart Command That Only Worked When a Human Typed It",
+      "subtitle": "A supervisor noticed the crash, ran the restart and failed every time. The command was right. The shell it ran in was not.",
+      "category": "DevOps",
+      "publishedAt": "2026-10-01",
+      "url": "https://a-ryan-1.github.io/blogs/p/restart-command-that-only-worked-when-a-human-typed-it/",
+      "medium": "https://medium.com/@aryan0deshmukh/the-restart-command-that-only-worked-when-a-human-typed-it-941d30319d22",
+      "cover": "https://a-ryan-1.github.io/blogs/covers/restart-command-that-only-worked-when-a-human-typed-it.svg",
+      "coverDark": "https://a-ryan-1.github.io/blogs/covers/restart-command-that-only-worked-when-a-human-typed-it-dark.svg",
+      "coverAlt": "Two lanes run the same terminal command. In the top lane a person runs it and it ends in a green tick. In the bottom lane a process supervisor runs it and it ends in a red cross."
+    },
+    {
+      "n": 1,
+      "slug": "water-that-flowed-backwards",
+      "title": "The Water That Flowed Backwards",
+      "subtitle": "One line of Go made our water meters report negative consumption. The fix we added afterwards was the same bug in disguise.",
+      "category": "Distributed Systems",
+      "publishedAt": "2026-09-30",
+      "url": "https://a-ryan-1.github.io/blogs/p/water-that-flowed-backwards/",
+      "medium": "https://medium.com/@aryan0deshmukh/the-water-that-flowed-backwards-2a7d6bb04c7c",
+      "cover": "https://a-ryan-1.github.io/blogs/covers/water-that-flowed-backwards.svg",
+      "coverDark": "https://a-ryan-1.github.io/blogs/covers/water-that-flowed-backwards-dark.svg",
+      "coverAlt": "A bar chart of one flat's water use per minute. Steady blue bars of fifty litres, then a red bar dipping below zero, then an orange bar twice the usual height, then steady blue bars again."
+    }
+  ],
+  "all": [
+    {
+      "n": 4,
+      "slug": "line-git-blame-cant-see",
+      "title": "The Line git blame Can't See",
+      "subtitle": "git blame tells you who touched a line last. For a line that's already been deleted, it has no answer at all.",
+      "category": "Git",
+      "publishedAt": "2026-11-01",
+      "url": "https://a-ryan-1.github.io/blogs/p/line-git-blame-cant-see/",
+      "medium": "https://medium.com/@aryan0deshmukh/the-line-git-blame-cant-see-b151afd654f1",
+      "cover": "https://a-ryan-1.github.io/blogs/covers/line-git-blame-cant-see.svg",
+      "coverDark": "https://a-ryan-1.github.io/blogs/covers/line-git-blame-cant-see-dark.svg",
+      "coverAlt": "A column of code lines with one line missing, shown as a dashed gap. A magnifying glass beside the gap finds the missing line in a stack of history behind the file."
+    },
+    {
+      "n": 3,
+      "slug": "fix-that-only-reached-half-the-server",
+      "title": "The Fix That Only Reached Half the Server",
+      "subtitle": "We fixed a config file, restarted the app and watched one feature recover. The other kept failing for a day and a half.",
+      "category": "Rails",
+      "publishedAt": "2026-10-15",
+      "url": "https://a-ryan-1.github.io/blogs/p/fix-that-only-reached-half-the-server/",
+      "medium": "https://medium.com/@aryan0deshmukh/the-fix-that-only-reached-half-the-server-942aeb0665ac",
+      "cover": "https://a-ryan-1.github.io/blogs/covers/fix-that-only-reached-half-the-server.svg",
+      "coverDark": "https://a-ryan-1.github.io/blogs/covers/fix-that-only-reached-half-the-server-dark.svg",
+      "coverAlt": "One config file icon at the centre with lines to two processes. The web process on the left ends in a green tick; the background worker on the right ends in a red cross."
+    },
+    {
+      "n": 2,
+      "slug": "restart-command-that-only-worked-when-a-human-typed-it",
+      "title": "The Restart Command That Only Worked When a Human Typed It",
+      "subtitle": "A supervisor noticed the crash, ran the restart and failed every time. The command was right. The shell it ran in was not.",
+      "category": "DevOps",
+      "publishedAt": "2026-10-01",
+      "url": "https://a-ryan-1.github.io/blogs/p/restart-command-that-only-worked-when-a-human-typed-it/",
+      "medium": "https://medium.com/@aryan0deshmukh/the-restart-command-that-only-worked-when-a-human-typed-it-941d30319d22",
+      "cover": "https://a-ryan-1.github.io/blogs/covers/restart-command-that-only-worked-when-a-human-typed-it.svg",
+      "coverDark": "https://a-ryan-1.github.io/blogs/covers/restart-command-that-only-worked-when-a-human-typed-it-dark.svg",
+      "coverAlt": "Two lanes run the same terminal command. In the top lane a person runs it and it ends in a green tick. In the bottom lane a process supervisor runs it and it ends in a red cross."
+    },
+    {
+      "n": 1,
+      "slug": "water-that-flowed-backwards",
+      "title": "The Water That Flowed Backwards",
+      "subtitle": "One line of Go made our water meters report negative consumption. The fix we added afterwards was the same bug in disguise.",
+      "category": "Distributed Systems",
+      "publishedAt": "2026-09-30",
+      "url": "https://a-ryan-1.github.io/blogs/p/water-that-flowed-backwards/",
+      "medium": "https://medium.com/@aryan0deshmukh/the-water-that-flowed-backwards-2a7d6bb04c7c",
+      "cover": "https://a-ryan-1.github.io/blogs/covers/water-that-flowed-backwards.svg",
+      "coverDark": "https://a-ryan-1.github.io/blogs/covers/water-that-flowed-backwards-dark.svg",
+      "coverAlt": "A bar chart of one flat's water use per minute. Steady blue bars of fifty litres, then a red bar dipping below zero, then an orange bar twice the usual height, then steady blue bars again."
+    }
+  ]
+}
