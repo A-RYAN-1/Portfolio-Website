@@ -76,6 +76,15 @@
   }
 
   var PAGE_SIZE = 6;
+  // The Blog tab shows two cards across, so a page is one row.
+  var BLOG_PAGE_SIZE = 2;
+
+  // A project with no picture of its own gets one of the generic pictures the other cards use, in turn,
+  // instead of the site's text-only share image, so every row has the same picture shape.
+  var GENERIC_PICTURES = ["./assets/images/project-1.jpg", "./assets/images/project-3.jpg", "./assets/images/project-4.png"];
+  function genericPicture(n) {
+    return GENERIC_PICTURES[n % GENERIC_PICTURES.length];
+  }
 
   function pageCount(total, size) {
     return Math.max(1, Math.ceil(total / (size || PAGE_SIZE)));
@@ -161,6 +170,8 @@
     repoKey: repoKey,
     indexBuilds: indexBuilds,
     PAGE_SIZE: PAGE_SIZE,
+    BLOG_PAGE_SIZE: BLOG_PAGE_SIZE,
+    genericPicture: genericPicture,
     pageCount: pageCount,
     clampPage: clampPage,
     pageSlice: pageSlice,
@@ -195,6 +206,7 @@
     var status = o.status;
     var items = o.items;
     var page = pageFromSearch(location.search, o.key);
+    var size = o.size || PAGE_SIZE;
 
     function pageLink(n, text, label) {
       var a = el("a", "oss-page", text);
@@ -205,10 +217,10 @@
     }
 
     function draw(move) {
-      var pages = pageCount(items.length);
+      var pages = pageCount(items.length, size);
       page = clampPage(page, pages);
       list.textContent = "";
-      pageSlice(items, page).forEach(function (item) {
+      pageSlice(items, page, size).forEach(function (item) {
         list.appendChild(o.makeCard(item));
       });
       if (nav) {
@@ -234,8 +246,8 @@
         }
       }
       if (status) {
-        var from = (page - 1) * PAGE_SIZE;
-        status.textContent = items.length ? "Showing " + (from + 1) + " to " + Math.min(from + PAGE_SIZE, items.length) + " of " + items.length + " " + o.label : "";
+        var from = (page - 1) * size;
+        status.textContent = items.length ? "Showing " + (from + 1) + " to " + Math.min(from + size, items.length) + " of " + items.length + " " + o.label : "";
       }
       if (move) list.scrollIntoView({ block: "start", behavior: "smooth" });
     }
@@ -364,10 +376,13 @@
       items: items,
       key: "blog",
       hash: "blog",
+      size: BLOG_PAGE_SIZE,
       label: "posts",
       makeCard: blogCard,
     });
   }
+
+  var nextGeneric = 0;
 
   function projectCard(p, localImage) {
     var li = el("li", "project-item active");
@@ -384,7 +399,7 @@
     box.appendChild(icon);
     fig.appendChild(box);
     var img = el("img");
-    var src = localImage || safeUrl(p.image);
+    var src = localImage || genericPicture(nextGeneric++);
     if (src) img.src = src;
     img.alt = p.title + (p.tagline ? ": " + plain(p.tagline) : "");
     img.loading = "lazy";
@@ -408,6 +423,7 @@
       if (k && img) pictures[k] = img.getAttribute("src");
     });
     list.textContent = "";
+    nextGeneric = 0;
     items.forEach(function (p) {
       list.appendChild(projectCard(p, pictures[repoKey(p.repo)]));
     });
