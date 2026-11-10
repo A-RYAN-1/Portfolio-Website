@@ -1,0 +1,309 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-09T06:19:24.476Z",
+  "url": "https://a-ryan-1.github.io/oss/",
+  "merged": 21,
+  "inReview": 17,
+  "projects": 11,
+  "stars": 102319,
+  "latest": [
+    {
+      "title": "fix(testify): avoid name collision between Run closure argument and package named args",
+      "url": "https://github.com/vektra/mockery/pull/1207",
+      "number": 1207,
+      "repo": "vektra/mockery",
+      "language": "Go",
+      "stars": 7181,
+      "mergedAt": "2026-11-06T22:16:13Z",
+      "image": "https://opengraph.githubassets.com/1/vektra/mockery/pull/1207"
+    },
+    {
+      "title": "fix(k8s): run the kustomize DaemonSet unprivileged by default",
+      "url": "https://github.com/sustainable-computing-io/kepler/pull/2709",
+      "number": 2709,
+      "repo": "sustainable-computing-io/kepler",
+      "language": "Go",
+      "stars": 1601,
+      "mergedAt": "2026-11-06T05:20:40Z",
+      "image": "https://opengraph.githubassets.com/1/sustainable-computing-io/kepler/pull/2709"
+    },
+    {
+      "title": "fix(config): accept multi-host PostgreSQL URLs",
+      "url": "https://github.com/tortoise/tortoise-orm/pull/2387",
+      "number": 2387,
+      "repo": "tortoise/tortoise-orm",
+      "language": "Python",
+      "stars": 5647,
+      "mergedAt": "2026-11-05T05:49:18Z",
+      "image": "https://opengraph.githubassets.com/1/tortoise/tortoise-orm/pull/2387"
+    },
+    {
+      "title": "feat: add read-only admin page for research topics",
+      "url": "https://github.com/ONEARMY/community-platform/pull/5039",
+      "number": 5039,
+      "repo": "ONEARMY/community-platform",
+      "language": "TypeScript",
+      "stars": 1405,
+      "mergedAt": "2026-11-04T08:17:11Z",
+      "image": "https://opengraph.githubassets.com/1/ONEARMY/community-platform/pull/5039"
+    },
+    {
+      "title": "feat(chart): add hostUsers value",
+      "url": "https://github.com/kubernetes-sigs/external-dns/pull/6827",
+      "number": 6827,
+      "repo": "kubernetes-sigs/external-dns",
+      "language": "Go",
+      "stars": 9145,
+      "mergedAt": "2026-11-04T07:52:34Z",
+      "image": "https://opengraph.githubassets.com/1/kubernetes-sigs/external-dns/pull/6827"
+    },
+    {
+      "title": "object: add VAULT_TRANSIT_BACKEND_PATH for the RGW SSE-S3 transit mount",
+      "url": "https://github.com/rook/rook/pull/18598",
+      "number": 18598,
+      "repo": "rook/rook",
+      "language": "Go",
+      "stars": 13703,
+      "mergedAt": "2026-11-04T04:32:33Z",
+      "image": "https://opengraph.githubassets.com/1/rook/rook/pull/18598"
+    }
+  ],
+  "all": [
+    {
+      "title": "fix(testify): avoid name collision between Run closure argument and package named args",
+      "url": "https://github.com/vektra/mockery/pull/1207",
+      "number": 1207,
+      "repo": "vektra/mockery",
+      "language": "Go",
+      "stars": 7181,
+      "mergedAt": "2026-11-06T22:16:13Z",
+      "image": "https://opengraph.githubassets.com/1/vektra/mockery/pull/1207"
+    },
+    {
+      "title": "fix(k8s): run the kustomize DaemonSet unprivileged by default",
+      "url": "https://github.com/sustainable-computing-io/kepler/pull/2709",
+      "number": 2709,
+      "repo": "sustainable-computing-io/kepler",
+      "language": "Go",
+      "stars": 1601,
+      "mergedAt": "2026-11-06T05:20:40Z",
+      "image": "https://opengraph.githubassets.com/1/sustainable-computing-io/kepler/pull/2709"
+    },
+    {
+      "title": "fix(config): accept multi-host PostgreSQL URLs",
+      "url": "https://github.com/tortoise/tortoise-orm/pull/2387",
+      "number": 2387,
+      "repo": "tortoise/tortoise-orm",
+      "language": "Python",
+      "stars": 5647,
+      "mergedAt": "2026-11-05T05:49:18Z",
+      "image": "https://opengraph.githubassets.com/1/tortoise/tortoise-orm/pull/2387"
+    },
+    {
+      "title": "feat: add read-only admin page for research topics",
+      "url": "https://github.com/ONEARMY/community-platform/pull/5039",
+      "number": 5039,
+      "repo": "ONEARMY/community-platform",
+      "language": "TypeScript",
+      "stars": 1405,
+      "mergedAt": "2026-11-04T08:17:11Z",
+      "image": "https://opengraph.githubassets.com/1/ONEARMY/community-platform/pull/5039"
+    },
+    {
+      "title": "feat(chart): add hostUsers value",
+      "url": "https://github.com/kubernetes-sigs/external-dns/pull/6827",
+      "number": 6827,
+      "repo": "kubernetes-sigs/external-dns",
+      "language": "Go",
+      "stars": 9145,
+      "mergedAt": "2026-11-04T07:52:34Z",
+      "image": "https://opengraph.githubassets.com/1/kubernetes-sigs/external-dns/pull/6827"
+    },
+    {
+      "title": "object: add VAULT_TRANSIT_BACKEND_PATH for the RGW SSE-S3 transit mount",
+      "url": "https://github.com/rook/rook/pull/18598",
+      "number": 18598,
+      "repo": "rook/rook",
+      "language": "Go",
+      "stars": 13703,
+      "mergedAt": "2026-11-04T04:32:33Z",
+      "image": "https://opengraph.githubassets.com/1/rook/rook/pull/18598"
+    },
+    {
+      "title": "fix: scope case lookups to the current organization",
+      "url": "https://github.com/rubyforgood/casa/pull/7319",
+      "number": 7319,
+      "repo": "rubyforgood/casa",
+      "language": "Ruby",
+      "stars": 383,
+      "mergedAt": "2026-11-02T06:16:35Z",
+      "image": "https://opengraph.githubassets.com/1/rubyforgood/casa/pull/7319"
+    },
+    {
+      "title": "fix(resource): attribute kepler's own processes to its container and pod",
+      "url": "https://github.com/sustainable-computing-io/kepler/pull/2641",
+      "number": 2641,
+      "repo": "sustainable-computing-io/kepler",
+      "language": "Go",
+      "stars": 1601,
+      "mergedAt": "2026-10-29T07:01:51Z",
+      "image": "https://opengraph.githubassets.com/1/sustainable-computing-io/kepler/pull/2641"
+    },
+    {
+      "title": "Keep external links when page numbering is enabled",
+      "url": "https://github.com/invoiceninja/invoiceninja/pull/13402",
+      "number": 13402,
+      "repo": "invoiceninja/invoiceninja",
+      "language": "PHP",
+      "stars": 10545,
+      "mergedAt": "2026-10-29T03:03:03Z",
+      "image": "https://opengraph.githubassets.com/1/invoiceninja/invoiceninja/pull/13402"
+    },
+    {
+      "title": "[AI] Explain SimpleFIN outages instead of a generic internal error",
+      "url": "https://github.com/actualbudget/actual/pull/9299",
+      "number": 9299,
+      "repo": "actualbudget/actual",
+      "language": "TypeScript",
+      "stars": 30102,
+      "mergedAt": "2026-10-25T17:08:46Z",
+      "image": "https://opengraph.githubassets.com/1/actualbudget/actual/pull/9299"
+    },
+    {
+      "title": "fix(helm): run the DaemonSet unprivileged by default",
+      "url": "https://github.com/sustainable-computing-io/kepler/pull/2584",
+      "number": 2584,
+      "repo": "sustainable-computing-io/kepler",
+      "language": "Go",
+      "stars": 1601,
+      "mergedAt": "2026-10-20T14:35:56Z",
+      "image": "https://opengraph.githubassets.com/1/sustainable-computing-io/kepler/pull/2584"
+    },
+    {
+      "title": "fix: keep Azure SD HTTP client settings in generated scrape config",
+      "url": "https://github.com/prometheus-operator/prometheus-operator/pull/8898",
+      "number": 8898,
+      "repo": "prometheus-operator/prometheus-operator",
+      "language": "Go",
+      "stars": 9993,
+      "mergedAt": "2026-10-20T13:10:33Z",
+      "image": "https://opengraph.githubassets.com/1/prometheus-operator/prometheus-operator/pull/8898"
+    },
+    {
+      "title": "fix: require httpConfig.authorization for Webex receivers",
+      "url": "https://github.com/prometheus-operator/prometheus-operator/pull/8897",
+      "number": 8897,
+      "repo": "prometheus-operator/prometheus-operator",
+      "language": "Go",
+      "stars": 9993,
+      "mergedAt": "2026-10-20T12:59:01Z",
+      "image": "https://opengraph.githubassets.com/1/prometheus-operator/prometheus-operator/pull/8897"
+    },
+    {
+      "title": "fix: reject duplicate time interval names in AlertmanagerConfig",
+      "url": "https://github.com/prometheus-operator/prometheus-operator/pull/8896",
+      "number": 8896,
+      "repo": "prometheus-operator/prometheus-operator",
+      "language": "Go",
+      "stars": 9993,
+      "mergedAt": "2026-10-19T08:26:45Z",
+      "image": "https://opengraph.githubassets.com/1/prometheus-operator/prometheus-operator/pull/8896"
+    },
+    {
+      "title": "fix(resource): match cgroupfs pod paths read from a cgroup namespace",
+      "url": "https://github.com/sustainable-computing-io/kepler/pull/2591",
+      "number": 2591,
+      "repo": "sustainable-computing-io/kepler",
+      "language": "Go",
+      "stars": 1601,
+      "mergedAt": "2026-10-18T13:17:37Z",
+      "image": "https://opengraph.githubassets.com/1/sustainable-computing-io/kepler/pull/2591"
+    },
+    {
+      "title": "ci(k8s): check workload metrics after the Helm install",
+      "url": "https://github.com/sustainable-computing-io/kepler/pull/2592",
+      "number": 2592,
+      "repo": "sustainable-computing-io/kepler",
+      "language": "Go",
+      "stars": 1601,
+      "mergedAt": "2026-10-18T13:09:13Z",
+      "image": "https://opengraph.githubassets.com/1/sustainable-computing-io/kepler/pull/2592"
+    },
+    {
+      "title": "Add option to hide the menu bar",
+      "url": "https://github.com/hluk/CopyQ/pull/3732",
+      "number": 3732,
+      "repo": "hluk/CopyQ",
+      "language": "C++",
+      "stars": 12614,
+      "mergedAt": "2026-10-10T11:20:31Z",
+      "image": "https://opengraph.githubassets.com/1/hluk/CopyQ/pull/3732"
+    },
+    {
+      "title": "Add option to hide the window frame",
+      "url": "https://github.com/hluk/CopyQ/pull/3733",
+      "number": 3733,
+      "repo": "hluk/CopyQ",
+      "language": "C++",
+      "stars": 12614,
+      "mergedAt": "2026-10-08T13:09:39Z",
+      "image": "https://opengraph.githubassets.com/1/hluk/CopyQ/pull/3733"
+    },
+    {
+      "title": "chore: migrate admin layout breadcrumbs to platform UI",
+      "url": "https://github.com/ONEARMY/community-platform/pull/4954",
+      "number": 4954,
+      "repo": "ONEARMY/community-platform",
+      "language": "TypeScript",
+      "stars": 1405,
+      "mergedAt": "2026-10-06T12:37:24Z",
+      "image": "https://opengraph.githubassets.com/1/ONEARMY/community-platform/pull/4954"
+    },
+    {
+      "title": "chore: migrate CharacterCount to platform UI",
+      "url": "https://github.com/ONEARMY/community-platform/pull/4950",
+      "number": 4950,
+      "repo": "ONEARMY/community-platform",
+      "language": "TypeScript",
+      "stars": 1405,
+      "mergedAt": "2026-10-06T08:29:21Z",
+      "image": "https://opengraph.githubassets.com/1/ONEARMY/community-platform/pull/4950"
+    },
+    {
+      "title": "chore: migrate Breadcrumbs to platform UI",
+      "url": "https://github.com/ONEARMY/community-platform/pull/4946",
+      "number": 4946,
+      "repo": "ONEARMY/community-platform",
+      "language": "TypeScript",
+      "stars": 1405,
+      "mergedAt": "2026-10-03T03:21:28Z",
+      "image": "https://opengraph.githubassets.com/1/ONEARMY/community-platform/pull/4946"
+    }
+  ],
+  "top": [
+    {
+      "name": "sustainable-computing-io/kepler",
+      "description": "Kepler (CNCF Sandbox project) is a power meter interface for Kubernetes: it lets you monitor the energy use of workloads. Let's make every watt matter.",
+      "stars": 1601,
+      "language": "Go",
+      "merged": 5,
+      "url": "https://a-ryan-1.github.io/oss/p/sustainable-computing-io--kepler/"
+    },
+    {
+      "name": "ONEARMY/community-platform",
+      "description": "A platform to build useful communities that aim to tackle global problems",
+      "stars": 1405,
+      "language": "TypeScript",
+      "merged": 4,
+      "url": "https://a-ryan-1.github.io/oss/p/onearmy--community-platform/"
+    },
+    {
+      "name": "prometheus-operator/prometheus-operator",
+      "description": "Prometheus Operator creates/configures/manages Prometheus clusters atop Kubernetes",
+      "stars": 9993,
+      "language": "Go",
+      "merged": 3,
+      "url": "https://a-ryan-1.github.io/oss/p/prometheus-operator--prometheus-operator/"
+    }
+  ]
+}

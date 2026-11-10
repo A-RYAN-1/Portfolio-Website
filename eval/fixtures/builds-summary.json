@@ -1,0 +1,203 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-09T07:13:06.165Z",
+  "url": "https://a-ryan-1.github.io/builds/",
+  "projects": 9,
+  "live": 6,
+  "answering": 6,
+  "all": [
+    {
+      "name": "smart-rule-based-approval-engine",
+      "title": "Smart Rule-Based Approval Engine",
+      "repo": "https://github.com/A-RYAN-1/smart-rule-based-approval-engine",
+      "url": "https://a-ryan-1.github.io/builds/p/smart-rule-based-approval-engine/",
+      "image": "https://a-ryan-1.github.io/builds/og/smart-rule-based-approval-engine.png",
+      "tagline": "Rules engine that auto-decides leave, expense and discount requests. Go, Gin, PostgreSQL, React.",
+      "kind": "app",
+      "language": "TypeScript",
+      "topics": [
+        "gin",
+        "go",
+        "postgresql",
+        "react",
+        "rules-engine",
+        "typescript"
+      ],
+      "live": true
+    },
+    {
+      "name": "event-order",
+      "title": "event-order",
+      "repo": "https://github.com/A-RYAN-1/event-order",
+      "url": "https://a-ryan-1.github.io/builds/p/event-order/",
+      "image": "https://a-ryan-1.github.io/builds/og/event-order.png",
+      "tagline": "Put out-of-order events back in event-time order: generic Go library, watermark and bounded delay, no dependencies",
+      "kind": "library",
+      "language": "Go",
+      "topics": [
+        "event-time",
+        "go",
+        "golang",
+        "kafka",
+        "mqtt",
+        "out-of-order-events",
+        "reordering",
+        "stream-processing",
+        "watermark",
+        "zero-dependency"
+      ],
+      "live": false
+    },
+    {
+      "name": "fintech-fraud-detection",
+      "title": "Fintech Fraud Detection",
+      "repo": "https://github.com/A-RYAN-1/fintech-fraud-detection",
+      "url": "https://a-ryan-1.github.io/builds/p/fintech-fraud-detection/",
+      "image": "https://a-ryan-1.github.io/builds/og/fintech-fraud-detection.png",
+      "tagline": "Real-time transaction fraud detection: Rails API (risk rules, Solid Queue) + React dashboard",
+      "kind": "app",
+      "language": "TypeScript",
+      "topics": [
+        "fraud-detection",
+        "postgresql",
+        "react",
+        "ruby-on-rails",
+        "solid-queue"
+      ],
+      "live": true
+    },
+    {
+      "name": "valorant-voice-ai",
+      "title": "Valorant Voice AI",
+      "repo": "https://github.com/A-RYAN-1/valorant-voice-ai",
+      "url": "https://a-ryan-1.github.io/builds/p/valorant-voice-ai/",
+      "image": "https://a-ryan-1.github.io/builds/og/valorant-voice-ai.png",
+      "tagline": "Text to speech in Valorant agent voices: dataset pipeline, XTTS-v2 fine-tune per agent, measured evaluation, typed API (Kaggle GPU)",
+      "kind": "app",
+      "language": "Python",
+      "topics": [
+        "fastapi",
+        "machine-learning",
+        "speech-synthesis",
+        "text-to-speech",
+        "xtts"
+      ],
+      "live": false
+    },
+    {
+      "name": "node-connect",
+      "title": "Node Connect",
+      "repo": "https://github.com/A-RYAN-1/node-connect",
+      "url": "https://a-ryan-1.github.io/builds/p/node-connect/",
+      "image": "https://a-ryan-1.github.io/builds/og/node-connect.png",
+      "tagline": "Decentralised chat with MetaMask sign-in and token rewards. Solidity, Hardhat, Next.js.",
+      "kind": "app",
+      "language": "JavaScript",
+      "topics": [
+        "ethers",
+        "hardhat",
+        "nextjs",
+        "solidity",
+        "web3"
+      ],
+      "live": true
+    },
+    {
+      "name": "cash-your-coupons",
+      "title": "Cash Your Coupons",
+      "repo": "https://github.com/A-RYAN-1/cash-your-coupons",
+      "url": "https://a-ryan-1.github.io/builds/p/cash-your-coupons/",
+      "image": "https://a-ryan-1.github.io/builds/og/cash-your-coupons.png",
+      "tagline": "Mobile app to buy, sell and exchange unused coupons. React Native, Expo, Firebase.",
+      "kind": "app",
+      "language": "JavaScript",
+      "topics": [
+        "expo",
+        "firebase",
+        "react-native"
+      ],
+      "live": true
+    },
+    {
+      "name": "todo-app-pern",
+      "title": "Todo App (PERN)",
+      "repo": "https://github.com/A-RYAN-1/todo-app-pern",
+      "url": "https://a-ryan-1.github.io/builds/p/todo-app-pern/",
+      "image": "https://a-ryan-1.github.io/builds/og/todo-app-pern.png",
+      "tagline": "Todo app on the PERN stack: PostgreSQL, Express, React, Node.",
+      "kind": "app",
+      "language": "JavaScript",
+      "topics": [
+        "express",
+        "pern",
+        "postgresql",
+        "react"
+      ],
+      "live": true
+    },
+    {
+      "name": "drunken-cockroach-path",
+      "title": "Drunken Cockroach Path",
+      "repo": "https://github.com/A-RYAN-1/drunken-cockroach-path",
+      "url": "https://a-ryan-1.github.io/builds/p/drunken-cockroach-path/",
+      "image": "https://a-ryan-1.github.io/builds/og/drunken-cockroach-path.png",
+      "tagline": "Seeded random walk and backtracking tour of an 8x8 board on a canvas. TypeScript, Vite, Vitest.",
+      "kind": "app",
+      "language": "TypeScript",
+      "topics": [
+        "random-walk",
+        "backtracking",
+        "typescript",
+        "visualization",
+        "vite",
+        "vitest"
+      ],
+      "live": true
+    },
+    {
+      "name": "hand-gesture-volume-control",
+      "title": "Hand Gesture Volume Control",
+      "repo": "https://github.com/A-RYAN-1/hand-gesture-volume-control",
+      "url": "https://a-ryan-1.github.io/builds/p/hand-gesture-volume-control/",
+      "image": "https://a-ryan-1.github.io/builds/og/hand-gesture-volume-control.png",
+      "tagline": "Webcam hand-gesture volume control. Python, OpenCV, MediaPipe.",
+      "kind": "app",
+      "language": "Python",
+      "topics": [
+        "mediapipe",
+        "opencv",
+        "python"
+      ],
+      "live": false
+    }
+  ],
+  "top": [
+    {
+      "name": "smart-rule-based-approval-engine",
+      "title": "Smart Rule-Based Approval Engine",
+      "tagline": "Rules engine that auto-decides leave, expense and discount requests. Go, Gin, PostgreSQL, React.",
+      "language": "TypeScript",
+      "live": "https://smart-rule-based-approval-engine.vercel.app",
+      "image": "https://a-ryan-1.github.io/builds/og/smart-rule-based-approval-engine.png",
+      "url": "https://a-ryan-1.github.io/builds/p/smart-rule-based-approval-engine/"
+    },
+    {
+      "name": "event-order",
+      "title": "event-order",
+      "tagline": "Put out-of-order events back in event-time order: generic Go library, watermark and bounded delay, no dependencies",
+      "language": "Go",
+      "live": null,
+      "image": "https://a-ryan-1.github.io/builds/og/event-order.png",
+      "url": "https://a-ryan-1.github.io/builds/p/event-order/"
+    },
+    {
+      "name": "fintech-fraud-detection",
+      "title": "Fintech Fraud Detection",
+      "tagline": "Real-time transaction fraud detection: Rails API (risk rules, Solid Queue) + React dashboard",
+      "language": "TypeScript",
+      "live": "https://fintech-fraud-detection-aryan.vercel.app",
+      "image": "https://a-ryan-1.github.io/builds/og/fintech-fraud-detection.png",
+      "url": "https://a-ryan-1.github.io/builds/p/fintech-fraud-detection/"
+    }
+  ]
+}

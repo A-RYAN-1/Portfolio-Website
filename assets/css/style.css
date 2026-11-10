@@ -2326,3 +2326,82 @@ article {
   min-height: 140px;
   background: var(--onyx);
 }
+
+/* Ask about my work (About tab) */
+.site-chat {
+  margin-bottom: 35px;
+}
+
+.site-chat-note {
+  color: var(--light-gray-70);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  margin-bottom: 15px;
+}
+
+.site-chat-form {
+  display: flex;
+  gap: 10px;
+}
+
+.site-chat-button {
+  background: var(--eerie-black-2);
+  color: var(--orange-yellow-crayola);
+  border: 1px solid var(--jet);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--fs-6);
+}
+
+.site-chat-button:hover,
+.site-chat-chip:hover {
+  border-color: var(--orange-yellow-crayola);
+}
+
+.site-chat-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.site-chat-chip {
+  color: var(--light-gray);
+  background: transparent;
+  border: 1px solid var(--jet);
+  border-radius: var(--radius-md);
+  padding: 6px 12px;
+  font-size: var(--fs-7);
+  text-align: left;
+}
+
+.site-chat-answer {
+  margin-top: 16px;
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+}
+
+.site-chat-lead,
+.site-chat-refusal {
+  color: var(--light-gray-70);
+}
+
+.site-chat-hit {
+  padding: 12px 0;
+  border-top: 1px solid var(--jet);
+}
+
+.site-chat-tab {
+  color: var(--light-gray-70);
+  font-size: var(--fs-7);
+}
+
+.site-chat-snippet {
+  margin-top: 4px;
+}
+
+.site-chat-hit > a,
+.site-chat-hit > strong {
+  display: inline;
+}

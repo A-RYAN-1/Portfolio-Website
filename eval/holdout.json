@@ -1,0 +1,30 @@
+{
+  "name": "holdout",
+  "note": "Third set, written after prompt-free rules v2 were tuned on dev.json and on the misses of fresh.json, frozen by hash (holdout.sha256) before its first run. Never used for tuning.",
+  "cases": [
+    {"q": "Does he have experience with Docker or deployment pipelines?", "expect": ["service-3", "about-3", "about-1"]},
+    {"q": "Show me his work on Alertmanager", "expect": ["oss:prometheus-operator/prometheus-operator"]},
+    {"q": "Which project has a rules engine?", "expect": ["project:smart-rule-based-approval-engine"]},
+    {"q": "Is there anything about Ruby on Rails background jobs?", "expect": ["project:fintech-fraud-detection", "about-1", "about-2", "service-1"]},
+    {"q": "What did he change in Rook?", "expect": ["oss:rook/rook"]},
+    {"q": "what did he fix in the mockery library", "expect": ["oss:vektra/mockery"]},
+    {"q": "Where did he study or what leadership role did he hold?", "expect": ["cert-3"]},
+    {"q": "Which blog post covers Go bugs?", "expect": ["post:water-that-flowed-backwards"]},
+    {"q": "Does he build dashboards?", "expect": ["about-3", "service-2", "project:fintech-fraud-detection", "project:smart-rule-based-approval-engine"]},
+    {"q": "Has he published a Go library?", "expect": ["project:event-order"]},
+    {"q": "What does he do with IoT?", "expect": ["service-4", "about-1", "about-2"]},
+    {"q": "Tell me about the Invoice Ninja pull request", "expect": ["oss:invoiceninja/invoiceninja"]},
+    {"q": "what is the coupon app about", "expect": ["project:cash-your-coupons"]},
+    {"q": "Which of his repos use TypeScript?", "expect": ["project:smart-rule-based-approval-engine", "project:fintech-fraud-detection", "project:drunken-cockroach-path"]},
+    {"q": "How many articles are on the blog?", "expect": ["stat:blog"]},
+    {"q": "Did he work on CASA?", "expect": ["oss:rubyforgood/casa"]},
+    {"q": "Is he available to start next month?", "expect": []},
+    {"q": "What is his favourite movie?", "expect": []},
+    {"q": "Does he write Kotlin?", "expect": []},
+    {"q": "Give me the CEO of Josh Software", "expect": []},
+    {"q": "What did he study at university and what was his CGPA?", "expect": []},
+    {"q": "How do I cook biryani?", "expect": []},
+    {"q": "Explain how Kubernetes scheduling works", "expect": []},
+    {"q": "Which programming language is best for beginners?", "expect": []}
+  ]
+}

@@ -60,7 +60,7 @@
           <div class="info-content">
             <h1 class="name" title="Aryan Deshmukh">Aryan Deshmukh</h1>
 
-            <p class="title">Associate Software Engineer</p>
+            <p class="title" data-chat-chunk="role" data-chat-title="Role">Associate Software Engineer</p>
           </div>
 
           <button class="info_more-btn" data-sidebar-btn>
@@ -96,7 +96,7 @@
               <div class="contact-info">
                 <p class="contact-title">Location</p>
 
-                <address>Pune, Maharashtra</address>
+                <address data-chat-chunk="location" data-chat-title="Location">Pune, Maharashtra</address>
               </div>
             </li>
           </ul>
@@ -187,14 +187,14 @@
           </header>
 
           <section class="about-text">
-  <p>
+  <p data-chat-chunk="about-1" data-chat-title="About Aryan">
     I'm an Associate Software Engineer at Josh Software, where I build
     production backend systems in Go and Ruby on Rails. My work centers on
     IoT data pipelines, billing systems, and the APIs and background jobs
     that keep them reliable at scale.
   </p>
 
-  <p>
+  <p data-chat-chunk="about-2" data-chat-title="About Aryan">
     At work I've traced inconsistent water meter readings back to MQTT
     ingestion issues (after the fix, negative-reading support tickets
     stopped and only genuine hardware faults remained), and built
@@ -205,27 +205,27 @@
     Rails console.
   </p>
 
-  <p>
+  <p data-chat-chunk="about-3" data-chat-title="About Aryan">
     Beyond backend work, I build the React interfaces that sit on top of
     these systems — admin dashboards, approval workflows, fraud-detection
     tooling — and handle staging deployments and cloud automation on AWS, so
     I end up working the full path from database to browser.
   </p>
 
-  <p>
+  <p data-chat-chunk="about-4" data-chat-title="About Aryan">
     I'm most interested in backend engineering, distributed systems, and IoT
     platforms — how large-scale systems stay reliable under real-world data,
     and how to design them so they're easy to operate, not just easy to
     build.
   </p>
 
-  <p>
+  <p data-chat-chunk="about-5" data-chat-title="About Aryan">
     Outside of tech, I enjoy playing basketball and following sports. I believe
     teamwork, discipline, and continuous learning are essential in software
     engineering, and I strive to bring that mindset into every project I work on.
   </p>
 
-  <p>
+  <p data-chat-chunk="about-6" data-chat-title="About Aryan">
     I also write about the production bugs I chase — read them on
     <a
       href="https://medium.com/@aryan0deshmukh"
@@ -237,11 +237,37 @@
   </p>
 </section>
 
+          <section class="site-chat" aria-labelledby="site-chat-title">
+            <h3 class="h3 service-title" id="site-chat-title">Ask about my work</h3>
+            <p class="site-chat-note">
+              Answers are quoted from this site and nothing else. If the site
+              does not say it, you get no answer instead of a guess.
+            </p>
+            <form class="site-chat-form" data-site-chat-form>
+              <label class="project-search-label" for="site-chat-input">Your question</label>
+              <input
+                id="site-chat-input"
+                class="project-search-input"
+                type="text"
+                maxlength="200"
+                placeholder="For example: what has he built in Go?"
+                autocomplete="off"
+              />
+              <button class="site-chat-button" type="submit">Ask</button>
+            </form>
+            <ul class="site-chat-suggestions">
+              <li><button type="button" class="site-chat-chip" data-site-chat-suggest>What has he built in Go?</button></li>
+              <li><button type="button" class="site-chat-chip" data-site-chat-suggest>Which open source projects has he contributed to?</button></li>
+              <li><button type="button" class="site-chat-chip" data-site-chat-suggest>Any blog post about water meters?</button></li>
+            </ul>
+            <div class="site-chat-answer" role="status" aria-live="polite" data-site-chat-answer></div>
+          </section>
+
           <section class="service">
             <h3 class="h3 service-title">What I'm doing</h3>
 
             <ul class="service-list">
-              <li class="service-item">
+              <li class="service-item" data-chat-chunk="service-1" data-chat-title="Backend Engineering">
                 <div class="service-icon-box">
                   <img
                     src="./assets/images/icon-backend.svg"
@@ -261,7 +287,7 @@
                 </div>
               </li>
 
-              <li class="service-item">
+              <li class="service-item" data-chat-chunk="service-2" data-chat-title="Full-Stack Development">
                 <div class="service-icon-box">
                   <img
                     src="./assets/images/icon-dev.svg"
@@ -281,7 +307,7 @@
                 </div>
               </li>
 
-              <li class="service-item">
+              <li class="service-item" data-chat-chunk="service-3" data-chat-title="Cloud and DevOps">
                 <div class="service-icon-box">
                   <img
                     src="./assets/images/icon-cloud.svg"
@@ -301,7 +327,7 @@
                 </div>
               </li>
 
-              <li class="service-item">
+              <li class="service-item" data-chat-chunk="service-4" data-chat-title="Distributed Systems and IoT">
                 <div class="service-icon-box">
                   <img
                     src="./assets/images/icon-network.svg"
@@ -327,7 +353,7 @@
             <h3 class="h3 testimonials-title">Certifications &amp; Achievements</h3>
 
             <ul class="testimonials-list has-scrollbar">
-              <li class="testimonials-item">
+              <li class="testimonials-item" data-chat-chunk="cert-1" data-chat-title="Certification or achievement">
                 <div class="content-card" data-testimonials-item>
                   <figure class="testimonials-avatar-box">
                     <img
@@ -355,7 +381,7 @@
                 </div>
               </li>
 
-              <li class="testimonials-item">
+              <li class="testimonials-item" data-chat-chunk="cert-2" data-chat-title="Certification or achievement">
                 <div class="content-card" data-testimonials-item>
                   <figure class="testimonials-avatar-box">
                     <img
@@ -383,7 +409,7 @@
                 </div>
               </li>
 
-              <li class="testimonials-item">
+              <li class="testimonials-item" data-chat-chunk="cert-3" data-chat-title="Certification or achievement">
                 <div class="content-card" data-testimonials-item>
                   <figure class="testimonials-avatar-box">
                     <img
@@ -996,7 +1022,9 @@
     <script src="./assets/js/project-filter.js"></script>
     <script src="./assets/js/site-highlights.js"></script>
     <script src="./assets/js/tab-hash.js"></script>
+    <script src="./assets/js/site-chat-core.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/site-chat.js"></script>
 
     <script
       type="module"
