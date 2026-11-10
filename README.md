@@ -36,7 +36,7 @@
   </a>
 </p>
 
-<p align="center"><sub>Last updated: 2026-11-07 &middot; Live on a free tier (GitHub Pages)</sub></p>
+<p align="center"><sub>Last updated: 2026-11-10 &middot; Live on a free tier (GitHub Pages)</sub></p>
 
 ---
 
@@ -66,11 +66,12 @@ Open **https://a-ryan-1.github.io/Portfolio-Website/**. No login, nothing to ins
 
 Things to try in the first two minutes:
 
-1. Open **Open Source**: the line at the top counts merged pull requests, projects and combined stars, and the six newest merges below it are filled in from the [open-source site](https://a-ryan-1.github.io/oss/) when the page loads.
-2. On **Projects**, type `go` or `react` in the search box: the cards narrow as you type. Each card's link opens the project's case study on the [projects site](https://a-ryan-1.github.io/builds/).
-3. Open **Resume**: the current PDF is embedded as a preview and can be downloaded.
-4. Open **Blog**: the engineering posts, each card linking to the Medium story.
-5. Resize the window or open it on a phone: the sidebar collapses into a header and the grids reflow.
+1. On **About**, scroll to **Ask about my work** and click a suggested question: the answer is quoted from the site's own cards, with links. Ask something the site does not say (a favourite food) and you get a refusal, not a guess.
+2. Open **Open Source**: the line at the top counts merged pull requests, projects and combined stars, and the six newest merges below it are filled in from the [open-source site](https://a-ryan-1.github.io/oss/) when the page loads.
+3. On **Projects**, type `go` or `react` in the search box: the cards narrow as you type. Each card's link opens the project's case study on the [projects site](https://a-ryan-1.github.io/builds/).
+4. Open **Resume**: the current PDF is embedded as a preview and can be downloaded.
+5. Open **Blog**: the engineering posts, each card linking to the Medium story.
+6. Resize the window or open it on a phone: the sidebar collapses into a header and the grids reflow.
 
 <table>
   <tr>
@@ -83,11 +84,15 @@ Things to try in the first two minutes:
   </tr>
 </table>
 
+<p align="center"><img src="docs/images/ask.jpg" width="60%" alt="The Ask about my work box on the About tab, answering what he has built in Go with three quoted cards"></p>
+
+<p align="center"><sub>Ask about my work: the question is matched against the site's own cards and the best ones are quoted (<a href="#engineering-quality">measured</a>)</sub></p>
+
 <p align="center"><img src="docs/images/mobile.jpg" width="26%" alt="The About tab on a phone-sized screen: the profile card collapses into a header"></p>
 
 <p align="center"><sub>On a phone the sidebar collapses into a header and the grids reflow (<a href="#engineering-quality">measured</a>)</sub></p>
 
-Screenshots are of the live site, taken 2026-11-07 at 1440x900 (phone: 390x844 at 2x).
+Screenshots are of the live site, taken 2026-11-10 at 1440x900 (phone: 390x844 at 2x).
 
 ## Features
 
@@ -95,7 +100,8 @@ Screenshots are of the live site, taken 2026-11-07 at 1440x900 (phone: 390x844 a
 - **Search on the Projects tab**: type a name, language or topic; every word must match, and it combines with the category filter.
 - **Filterable project grid**: All, Web Development, App Development, Others; a dropdown replaces the buttons on small screens.
 - **Open Source tab**: a proof line and every merged pull request, six per page, newest first, filled in the browser from https://a-ryan-1.github.io/oss/summary.json by `assets/js/site-highlights.js`. The page is kept in the URL (`?oss=2#open-source`) so a page can be linked and Back works; the full list is on that site, which rebuilds itself from GitHub every six hours.
-- **Projects tab**: the cards and their pictures are curated here (`assets/images/project-*`); each card's link is pointed at the case study on https://a-ryan-1.github.io/builds/ (from that site's `summary.json`).
+- **Projects tab**: the cards are aligned in one grid, a card without a picture gets a generic one, and each card's link is pointed at the case study on https://a-ryan-1.github.io/builds/ (from that site's `summary.json`).
+- **Ask about my work** (About tab): a question box that matches the question against the site's 43 cards (About text, projects, posts, open-source repositories) with BM25 and shows the best three, quoted and linked. There is no language model, so nothing outside the site can appear; a question the site cannot answer gets a refusal. The index is built in the browser on the first question from the page and the three `summary.json` files, in `assets/js/site-chat-core.js` and `assets/js/site-chat.js`.
 - **Resume tab**: the current resume PDF, previewed and downloadable, plus a download link on the Contact tab.
 - **Blog tab**: a card per published post, linking to Medium.
 - **Responsive layout**: profile sidebar on desktop, collapsible on mobile.
@@ -170,9 +176,12 @@ assets/
   js/project-filter.js     the search and category matching rule (unit tested)
   js/site-highlights.js    fills the paginated Open Source tab and project links from the sister sites (unit tested)
   js/tab-hash.js           tab addresses such as #open-source (unit tested)
+  js/site-chat-core.js     card index, BM25 ranking and refusal rule for Ask about my work (unit tested)
+  js/site-chat.js          the question box on the About tab
   images/                  photo, project, blog and open-source images, icons
   Aryan_Deshmukh_Resume.pdf   the current resume, shown in the Resume tab
-tests/                     Node tests for the three scripts above
+tests/                     Node tests for the scripts above
+eval/                      the question sets, runner and results for Ask about my work
 docs/images/               README screenshots only
 .github/workflows/static.yml   deploys to GitHub Pages on push to main
 ```
@@ -183,7 +192,7 @@ docs/images/               README screenshots only
 
 | Area | What is in place |
 |---|---|
-| Tests | Node's built-in runner covers the search rule, the tab addresses and the sister-site data handling: 17 tests, all passing on 2026-11-07 (`node --test tests/*.test.js`); the page itself is checked by hand |
+| Tests | Node's built-in runner covers the search rule, the tab addresses, the sister-site data handling and the question box (index, ranking, refusal, frozen evaluation sets): 39 tests, all passing on 2026-11-10 (`node --test tests/*.test.js`); the page itself is checked by hand |
 | CI | `ci.yml` runs the unit tests on every pull request and push to `main`; `static.yml` deploys on every push to `main` |
 | Security | Static files only: no forms, no server, no cookies, no secrets; external links use `rel="noopener noreferrer"` |
 | Content check | The text is checked against a list of private names before every push, and every claim is traced to a recorded source |
@@ -191,6 +200,8 @@ docs/images/               README screenshots only
 | Lighthouse, live, desktop preset (2026-11-07, after pagination) | Performance 96 (93 earlier that day), Accessibility 96, Best Practices 100, SEO 100 |
 
 On 2026-10-16 the largest-contentful-paint element was the profile photo: a 1.6 MB PNG shown at 80 px wide. Replacing it with a 400 px JPEG (18 KB) lifted live mobile performance from 65 to 81 and desktop from 59 to 98, measured before and after on the live URL the same day. The 2026-11-07 numbers are the next measurement, after the tabs started loading live data and screenshots.
+
+**Ask about my work, measured 2026-11-09** on questions with hand-listed expected cards (`eval/README.md`): on the held-out set of 24 questions (written after tuning and frozen by hash before its first run) the right card was among the three shown for 12 of 16 answerable questions (75.0%) and 6 of 8 out-of-scope questions were refused; 4 answerable questions were wrongly refused. The tuned sets score higher (21 of 22 and 19 of 19 answerable) and are not the honest number. Live check 2026-11-10: "What has he built in Go?" returned event-order, Smart Rule-Based Approval Engine and Backend Engineering, and a question about a favourite pizza topping was refused.
 
 Run the same measurement:
 
@@ -251,11 +262,12 @@ The resume PDF and its preview image on the Resume tab are replaced by a script 
 
 ## Status and roadmap
 
-**Reached:** live on a free tier. URL opens and every tab, the project filter and the live Open Source tab work (checked 2026-11-07); Lighthouse re-measured on 2026-11-07.
+**Reached:** live on a free tier. URL opens and every tab, the project filter, the live Open Source tab and the Ask about my work box work (checked 2026-11-10); Lighthouse last measured on 2026-11-07, before the question box and the Projects card changes.
 
 **Known limitations**
 
-- Only three scripts have automated tests (17 tests), and there is no lint step; the markup is checked by hand.
+- Four scripts have automated tests (39 tests), and there is no lint step; the markup is checked by hand.
+- Ask about my work is keyword matching, not understanding: on the held-out set it wrongly refused 4 of 16 answerable questions and answered 2 of 8 out-of-scope ones, mostly where the question uses words the site never uses. It only knows what the cards say, and needs the three sister sites reachable for the open-source, project and blog cards.
 - The Open Source tab and the project pictures need the oss and builds sites to be reachable; without them the page shows its static text and the link.
 - Accessibility is 96, not 100: Lighthouse flags links inside text that are told apart by colour only.
 - The contact tab is links only (email, GitHub, LinkedIn, Medium); there is no form, on purpose.
@@ -263,6 +275,8 @@ The resume PDF and its preview image on the Resume tab are replaced by a script 
 
 **Planned**
 
+- [ ] Re-measure Lighthouse with the question box and the new Projects grid
+- [ ] Lower the wrong-refusal rate of Ask about my work (4 of 16 on the held-out set) with a fresh held-out set
 - [ ] Fix the colour-only link style flagged by Lighthouse
 - [ ] Self-host the font and icons to drop two third-party requests
 - [ ] Add a link checker to the deploy workflow
