@@ -125,3 +125,15 @@ test("the card line is the language then up to three topics", () => {
   assert.equal(h.projectLine({ topics: ["x"] }), "x");
   assert.equal(h.projectLine({ language: "Python" }), "Python");
 });
+
+test("a project without a picture of its own gets the generic pictures in turn", () => {
+  assert.equal(h.genericPicture(0), "./assets/images/project-1.jpg");
+  assert.equal(h.genericPicture(1), "./assets/images/project-3.jpg");
+  assert.equal(h.genericPicture(3), h.genericPicture(0));
+});
+
+test("the blog shows one row of two cards per page", () => {
+  assert.equal(h.BLOG_PAGE_SIZE, 2);
+  assert.equal(h.pageCount(4, h.BLOG_PAGE_SIZE), 2);
+  assert.deepEqual(h.pageSlice([1, 2, 3, 4], 2, h.BLOG_PAGE_SIZE), [3, 4]);
+});

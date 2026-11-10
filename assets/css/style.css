@@ -1044,6 +1044,19 @@ main {
   font-weight: var(--fw-300);
 }
 
+/* One row of cards lines up: titles reserve two lines so the category lines start at the same height. */
+.project-list {
+  align-items: start;
+}
+
+[data-page="projects"] .project-title {
+  min-height: 2.6em;
+}
+
+.project-category {
+  margin-top: 4px;
+}
+
 
 
 
