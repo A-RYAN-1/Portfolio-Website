@@ -584,6 +584,7 @@ main {
 
 .about-text p {
   margin-bottom: 15px;
+  max-width: 60ch; /* readable measure: under 80 characters a line (impeccable line-length rule) */
 }
 
 
