@@ -584,7 +584,7 @@ main {
 
 .about-text p {
   margin-bottom: 15px;
-  max-width: 78ch; /* readable measure: under 80 characters a line (impeccable line-length rule); wide enough to fill the About column */
+  max-width: none; /* user, 2026-11-14: paragraphs fill the whole card */
 }
 
 
